@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Crew - Fifty Hounds</title>
+
+    <!-- MATCH INDEX.HTML FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --dark-blue: #0a1929;
+            --dark-blue2: #182b42;
+            --gray: #101111;
+            --light-gray: #232728;
+            --mid-blue: #10263f;
+            --dark-yellow: #8b3d16;
+            --dark-orange: #8b3d16;
+            --bright-orange: #ff5500;
+            --light-yellow: #d1c5b5;
+            --blood-red: #8b0000;
+            --forest-green: #1a3a2e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--gray);
+            color: var(--light-yellow);
+            font-family: "IM Fell English", serif;
+            font-size: 18px;
+            line-height: 1.7;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Nav (same as index) */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--gray);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--light-gray);
+            z-index: 1000;
+            padding: 1.2rem 2rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            color: var(--yellow);
+            text-decoration: none;
+            font-family: "IM Fell English SC", serif;
+            font-size: 0.95rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--dark-yellow);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--dark-yellow);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        section {
+            padding: 7rem 2rem 4rem;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 3rem;
+            color: var(--light-yellow);
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 2px;
+            background: var(--dark-yellow);
+            margin: 1rem auto;
+        }
+
+        /* Crew layout */
+        .crew-member {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 3.5rem;
+            background: rgba(30, 33, 36, 0.5);
+            padding: 2rem;
+            
+        }
+
+        .crew-member img {
+            width: 300px;
+            /* or any fixed width you prefer */
+            height: auto;
+            /* keeps the full image intact */
+            object-fit: contain;
+            /* ensures 100% of the image shows */
+            border: 2px solid var(--dark-yellow);
+            display: block;
+        }
+
+
+
+        .crew-text h3 {
+            font-family: "IM Fell English SC", serif;
+            font-size: 1.5rem;
+            color: var(--dark-yellow);
+            margin-bottom: 0.7rem;
+        }
+
+        .crew-text p {
+            margin-bottom: 1rem;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .crew-member {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .crew-member img {
+                margin: 0 auto;
+                width: 70%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="crew.html">The Crew</a></li>
+            <li><a href="myths.html">The Myths</a></li>
+            <li><a href="lookbook.html">Look Book</a></li>
+            <li><a href="funding.html">Fundraising</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <h2>The Crew</h2>
+
+        <!-- HALLE -->
+        <div class="crew-member">
+            <img src="headshots/halle.jpeg" alt="Halle Skye headshot" loading="eager">
+            <div class="crew-text">
+                <h3>HALLE SKYE (Writer/Director)</h3>
+                <p>Halle Skye is a British-born filmmaker who is drawn to storytelling as a way of making sense of the
+                    world. She moved to New York City to expand her craft, earning a BFA in Film & Television from NYU’s
+                    Tisch School of the Arts. Her work gravitates toward dramas that exist in the space between intimacy
+                    and rupture. She is fascinated by familial dynamics, exploring how nostalgia and resentment ripple
+                    through generations, and is particularly drawn to the tension between the everyday and the
+                    extraordinary. </p>
+                <p>Upcoming short films “Mare” and “Sundown Sons” will complete festival circuits in 2026. “Mare”
+                    examines the intersection of grief and identity through the story of a young equestrian with
+                    terminal cancer, whilst “Sundown Sons” captures the restless energy of an alcoholic youth on the
+                    cusp of repentance. Together, they reflect her evolving style: bold yet grounded in character. </p>
+            </div>
+        </div>
+
+        <!-- ALEXANDRA -->
+        <div class="crew-member">
+            <img src="headshots/lex.jpeg" alt="Alexandra Mettler headshot" loading="eager">
+            <div class="crew-text">
+                <h3>ALEXANDRA METTLER (Director of Photography)</h3>
+                <p>Alexandra Mettler is a New York City based Director of Photography, originally from Eugene, OR. She
+                    works primarily in the narrative and documentary fields, specializing in 16mm & 35mm film. Her
+                    recognized work includes “Robster”, “The Chlorine Bible”, and “Partus”. She is also the 2024
+                    recipient of the ARRI Volker Bahnnemann Award for achievement in cinematography.
+                </p>
+            </div>
+        </div>
+         <!-- MIRA -->
+        <div class="crew-member">
+            <img src="headshots/mira.jpeg" alt="Mira Young headshot" loading="eager">
+            <div class="crew-text">
+                <h3>MIRA YOUNG (Producer)</h3>
+                <p>Mira Young is a New York City based producer and actor currently finishing her BFA in Drama at NYU’s
+                    Tisch School of the Arts. After spending two semesters interning for Darren Aronofsky’s Protozoa
+                    Pictures, Mira spent her Sophomore year producing a plethora of thesis films such as “Concrete
+                    Rose”, and has more recently entered into post-production for the rotoscoped short “Sarcophagus”.
+                </p>
+                <p>As
+                    both an actor and producer, Mira is drawn to stories that explore the boundaries of imagination and
+                    lived experience along with atypical coming-of-age stories. Her time at Tisch has taught her the
+                    value in creating one's own opportunities, leading her to co-create “Fifty Hounds” which she is both
+                    producing and starring in.</p>
+            </div>
+        </div>
+
+
+        <!-- RALPH -->
+        <div class="crew-member">
+            <img src="headshots/ralph.jpeg" alt="Ralph Calle headshot" loading="eager">
+            <div class="crew-text">
+                <h3>RALPH CALLE (Producer)</h3>
+                <p>Ralph C. Schulz is a Swiss-Peruvian-American film producer, director, actor, and distributor. His
+                    award-winning debut film screened in New York, Los Angeles, and Milan and was distributed by Swiss
+                    Films. He is the co-founder and CEO of RISE FLIX, a platform connecting emerging filmmakers with
+                    industry professionals. Ralph has helped creators secure representation, land production deals, and
+                    option feature scripts. </p>
+                <p>He is the distributor of the Midwestern Emmy-winning short "Room Tone" and various other shorts
+                    Academy Award-shortlisted. His credits include HBO’s "And Just Like That" and "The Chair Company",
+                    and a documentary produced by three-time Academy Award winner Mark Harris.
+                </p>
+            </div>
+        </div>
+
+       
+    </section>
+
+</body>
+
+</html>

@@ -3,19 +3,33 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Fifty Hounds</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fifty Hounds - A Thriller</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="preload" href="headshots/halle.jpeg" as="image">
+    <link rel="preload" href="headshots/lex.jpeg" as="image">
+    <link rel="preload" href="headshots/mira.jpeg" as="image">
+    <link rel="preload" href="headshots/ralph.jpeg" as="image">
+    <link rel="preload" href="dress.jpeg" as="image">
+
     <style>
         :root {
-            --blue: #2b4e76;
-            --yellow: #ede1ab;
-            --dark-yellow: #cdba67;
+            --dark-blue: #0a1929;
+            --dark-blue2: #182b42;
+            --gray: #101111;
+            --light-gray: #232728;
+            --mid-blue: #10263f;
+            --dark-yellow: #8b3d16;
+            --dark-orange: #8b3d16;
+            --bright-orange: #ff5500;
+            --light-yellow: #d1c5b5;
+            --blood-red: #8b0000;
+            --forest-green: #1a3a2e;
         }
 
         * {
@@ -24,102 +38,406 @@
             box-sizing: border-box;
         }
 
-        html,
-        body {
-            width: 100%;
-            height: 100%;
-            background: #fff2b9;
-            color: #2b4e76;
-            font-family: "IM Fell English", serif;
-            font-style: normal;
-        }
-        h1{
-            font-family: "IM Fell English SC", serif;
+        html {
+            scroll-behavior: smooth;
         }
 
-        footer {
+        body {
+            background: var(--gray);
+            color: var(--light-yellow);
+            font-family: "IM Fell English", serif;
+            font-size: 18px;
+            line-height: 1.7;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Texture overlay */
+        body::before {
+            content: '';
             position: fixed;
-            bottom: 0;
+            top: 0;
             left: 0;
             width: 100%;
+            height: 100%;
+            background-image:
+                repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.05) 0px, transparent 1px, transparent 2px, rgba(0, 0, 0, 0.05) 3px),
+                repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.05) 0px, transparent 1px, transparent 2px, rgba(0, 0, 0, 0.05) 3px);
+            pointer-events: none;
+            opacity: 0.3;
+            z-index: 1;
         }
 
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--gray);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--light-gray);
+            z-index: 1000;
+            padding: 1.2rem 2rem;
+        }
 
-        body {
+        nav ul {
+            list-style: none;
             display: flex;
-            align-items: center;
             justify-content: center;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            color: var(--light-yellow);
+            text-decoration: none;
+            font-family: "IM Fell English SC", serif;
+            font-size: 0.95rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
             position: relative;
         }
 
-        .wrapper {
-            text-align: center;
-            transform: translateY(-8%);
-        }
-
-        h1 {
-            font-size: 3rem;
-            letter-spacing: 0.05em;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-        }
-
-        .statement {
-            font-size: 1.3rem;
-            max-width: 1200px;
-            margin: 0 auto 2rem;
-            line-height: 1.4;
-        }
-
-        .link {
-            display: inline-block;
-            padding: 0.6rem 1.8rem;
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--blue);
-            border: 1px solid var(--blue);
-            text-decoration: none;
-            transition: background 0.3s ease;
-            text-transform: uppercase;
-            margin: 0 0.5rem;
-        }
-
-        .link:hover {
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
             background: var(--dark-yellow);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--dark-yellow);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content {
+            max-width: 1800px;
+        }
+
+        .hero {
+            background-image: url('dress.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            z-index: 2;
             
         }
 
-        
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.45);
+            /* adjust darkness here */
+            z-index: -1;
+        }
+
+
+
+
+        h1 {
+
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            letter-spacing: 0.15em;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            color: var(--light-yellow);
+            font-weight: 600;
+        }
+
+        .genre {
+            font-family: "IM Fell English SC", serif;
+            font-size: 1rem;
+            letter-spacing: 0.3em;
+            color: var(--dark-orange);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .status {
+            font-family: "IM Fell English SC", serif;
+            font-size: 0.85rem;
+            letter-spacing: 0.2em;
+            color: var(--dark-orange);
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+
+        .logline {
+            font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+            font-style: italic;
+            line-height: 1.6;
+            margin: 2rem auto 3rem;
+            max-width: 800px;
+            color: var(--light-yellow);
+        }
+
+        .scroll-indicator {
+            margin-top: 3rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--dark-yellow);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 0.5;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        /* Content Sections */
+        section {
+            padding: 5rem 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Only constrain the non-hero sections */
+        section:not(.hero) {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+
+        section h2 {
+
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            letter-spacing: 0.1em;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: var(--dark-yellow);
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        section h2::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 2px;
+            background: var(--dark-yellow);
+            margin: 1rem auto;
+        }
+
+        .content-box {
+            background: rgba(27, 32, 36, 0.5);
+            border: 3px solid var(--light-gray);
+            padding: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .content-box p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .content-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .statement-highlight {
+            font-size: 1.25rem;
+            font-style: italic;
+            color: var(--dark-yellow);
+            margin: 2rem 0;
+            padding-left: 2rem;
+            border-left: 3px solid var(--dark-yellow);
+        }
+
+        .director-signature {
+            text-align: right;
+            font-style: italic;
+            margin-top: 2rem;
+            margin-top: 2rem;
+            letter-spacing: 0.03rem;
+            color: var(--light-yellow);
+        }
+
+        /* Decorative Elements */
+        .ornament {
+            text-align: center;
+            color: var(--light-yellow);
+            font-size: 1.5rem;
+            margin: 0.5rem 0;
+            opacity: 0.5;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            color: var(--light-yellow);
+            margin-bottom: 0;
+        }
+
+        footer a {
+            color: var(--dark-yellow);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--light-yellow);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1.5rem;
+            }
+
+            nav a {
+                font-size: 0.85rem;
+            }
+
+            section {
+                padding: 3rem 1.5rem;
+            }
+
+            .content-box {
+                padding: 2rem 1.5rem;
+            }
+
+            .statement-highlight {
+                padding-left: 1rem;
+            }
+        }
     </style>
 </head>
 
 <body>
-    <div class="wrapper">
-        <h1>Fifty Hounds</h1>
-        <p class="statement">Daughter to wed. Son to war. Twins in wartime Virginia are threatened with division by duty. </p>
-         <p class="statement">Until, one dares the gods to keep them apart. No matter the consequence. </p>
-        <a class="link" href="lookbook.html">Look Book</a>
-        <a class="link" href="crowdfunding.html">Crowd funding</a>
-        <a class="link" href="contact.html">Contact</a>
-        <p class="statement" style="margin-top: 2rem;">Casting ongoing. </p>
-        <p class="statement">Shooting spring. </p>
-    </div>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="crew.html">The Crew</a></li>
+            <li><a href="myths.html">The Myths</a></li>
+            <li><a href="lookbook.html">Look Book</a></li>
+            <li><a href="funding.html">Fundraising</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
-   
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="genre">Thriller</p>
+            <h1>Fifty Hounds</h1>
+            <p class="status">Pre-Production</p>
+            <p class="logline">
+                One to wed. One to war.<br>
+                Twins in wartime Virginia are threatened with division by duty, until one binds them to a fate neither
+                can escape.
+            </p>
+            <p class="scroll-indicator">↓ Scroll to explore ↓</p>
+        </div>
+    </section>
+
+    <!-- Synopsis -->
+    <section id="synopsis">
+        <h2>Synopsis</h2>
+        <div class="content-box">
+            <p>
+                At 18 years old, twin hunters Diana and Aidan are set on separate paths by their widowed father. Diana
+                is to be married off to an older man, while Aidan must follow in his father's footsteps and join the
+                war. Fifty Hounds follows the twins on their last day at home as Diana braces for her cage of
+                domesticity and Aidan prepares for battle.
+            </p>
+            <p>
+                As their final hours slip away, the divide between duty and desire deepens. Both twins cling to the
+                lives they must leave behind—Diana to her freedom, Aidan to his sister. When Diana sneaks into the
+                forest for one last hunt, Aidan follows, driven by his fear of losing his twin. Under the darkness of
+                night, he makes a choice that will tear them apart—and bind them together forever.
+            </p>
+        </div>
+    </section>
+
+    <div class="ornament">✦ ✦ ✦</div>
+
+    <!-- Why This? Why Now? -->
+    <section id="why">
+        <h2>Why This? Why Now?</h2>
+        <div class="content-box">
+            <p>
+                Nature has constantly been tied to figures of deep female power, such as Gaia, throughout history. Yet
+                today women still face an ongoing struggle to assert independence and power over their bodies, art, and
+                future. Inspired by the myths surrounding Artemis—a goddess defined by her demand for independence and
+                untouched, virginal existence—Fifty Hounds explores what has been lost in the modern understanding of
+                female power.
+            </p>
+            <p>
+                As a powerful agent of female choice, Artemis serves as the perfect focus for our exploration of the
+                cages built around women in an attempt to control them. By weaving together myth and film, we aim to
+                start greater conversations surrounding the necessity of female autonomy over one's future and body.
+            </p>
+        </div>
+    </section>
+
+    <div class="ornament">✦ ✦ ✦</div>
+
+    <!-- Director Statement -->
+    <section id="director">
+        <h2>Director Statement</h2>
+        <div class="content-box">
+            <p>
+                Fifty Hounds was born from my obsession with two Greek myths—Actaeon and Orion—both of which depict the
+                sanctity and adoration surrounding the immortal, unattainable Diana, and the consequences that come with
+                loving a wild woman. Set in a past period but urgent today, it asks:
+            </p>
+            <p class="statement-highlight">
+                Who decides your future? Who owns your body? What is the price of female freedom?
+            </p>
+            <p>
+                In our reality where those in power, under the guise of protection, force women back into cages they
+                believed were long broken, this film becomes a warning… a spark. I am telling it now because the past is
+                not past, and the myths we think we have outgrown are still being lived.
+            </p>
+            <p class="director-signature">- Halle Skye</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p style="
-        text-align: center;
-        font-size: 0.9rem;
-        color: var(--text);
-        margin-bottom: 2.7rem;
-        padding-bottom: 2rem;
-        margin-top: 12rem;
-      ">
+        <p>
             © 2025 Juliette Mangon |
-            <a href="https://juliettemangon.com/" target="_blank"
-                style="color: var(--text); text-decoration: underline;">
-                juliettemangon.com
-            </a>
+            <a href="https://juliettemangon.com/" target="_blank">juliettemangon.com</a>
         </p>
     </footer>
 </body>

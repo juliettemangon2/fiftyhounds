@@ -97,8 +97,9 @@
 
         section {
             padding: 7rem 2rem 4rem;
-            max-width: 1300px;
+            max-width: 1000px;
             margin: 0 auto;
+            
         }
 
         h2 {
@@ -119,50 +120,36 @@
             margin: 1rem auto;
         }
 
-        /* Crew layout */
-        .crew-member {
+        .myth {
             display: flex;
             gap: 2rem;
             margin-bottom: 3.5rem;
             background: rgba(30, 33, 36, 0.5);
+            border: 2px solid var(--light-gray);
             padding: 2rem;
         }
 
-        .crew-member img {
-            width: 300px;
-            /* or any fixed width you prefer */
-            height: auto;
-            /* keeps the full image intact */
-            object-fit: contain;
-            /* ensures 100% of the image shows */
-            border: 1px solid var(--dark-yellow);
-            display: block;
-        }
-
-
-
-        .crew-text h3 {
+       
+        .myth-text h3 {
             font-family: "IM Fell English SC", serif;
-            font-size: 1.4rem;
-            color: var(--light-yellow);
+            font-size: 1.5rem;
+            color: var(--dark-yellow);
             margin-bottom: 0.7rem;
+            
         }
 
-        .crew-text p {
+        .myth-text p {
             margin-bottom: 1rem;
+            
         }
 
         /* Mobile */
         @media (max-width: 768px) {
-            .crew-member {
+            .myth {
                 flex-direction: column;
                 text-align: center;
             }
 
-            .crew-member img {
-                margin: 0 auto;
-                width: 70%;
-            }
         }
     </style>
 </head>
@@ -180,7 +167,35 @@
     </nav>
 
     <section>
-        <h2>Look Book</h2>
+        <h2>The Myths</h2>
+
+        <!-- Actaeon -->
+        <div class="myth">
+            <div class="myth-text">
+                <h3>ACTAEON (Taboo & Revenge)</h3>
+                <p>A glimpse of Diana’s virginal body seals the fate of Actaeon, the hunter. The goddess transforms him
+                    into a stag. He is hunted down - killed by his own fifty hounds.
+                </p>
+                <p>“They gathered round him, and they fixed their snouts deep in his flesh: tore him to pieces, he whose
+                    features only as a stag appeared. - 'Tis said Diana's fury raged with none abatement till the torn
+                    flesh ceased to live.” Ovid, Metamorphoses, Book III, translated by Brookes More (1859–1942),
+                    Cornhill Edition (1922)
+                </p>
+            </div>
+        </div>
+
+        <!-- Orion -->
+        <div class="myth">
+            <div class="myth-text">
+                <h3>ORION (Love & Betrayal)</h3>
+                <p>Envious of Orion and Diana's bond, Apollo tricks her into shooting a distant dot in the ocean -
+                    unknowingly killing Orion. In her grief, she casts his spirit into the stars.
+                </p>
+                <p>“ The waves brought his slain body to the shore, and Diana, grieving greatly that she had struck him, and mourning his death with many tears, put him among the constellations.” Hyginus, Astronomica Bk 2, from The Myths of Hyginus, translated and edited by Mary Grant. University of Kansas Publications in Humanistic Studies
+</p>
+            </div>
+        </div>
+
 
 
 

@@ -3,19 +3,29 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Fifty Hounds</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Myths - Fifty Hounds</title>
+
+    <!-- MATCH INDEX.HTML FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
+
     <style>
         :root {
-            --blue: #2b4e76;
-            --yellow: #ede1ab;
-            --dark-yellow: #cdba67;
+            --dark-blue: #0a1929;
+            --dark-blue2: #182b42;
+            --gray: #101111;
+            --light-gray: #232728;
+            --mid-blue: #10263f;
+            --dark-yellow: #8b3d16;
+            --dark-orange: #8b3d16;
+            --bright-orange: #ff5500;
+            --light-yellow: #d1c5b5;
+            --blood-red: #8b0000;
+            --forest-green: #1a3a2e;
         }
 
         * {
@@ -24,98 +34,158 @@
             box-sizing: border-box;
         }
 
-        html,
         body {
-            width: 100%;
-            height: 100%;
-            background: #fff2b9;
-            color: #2b4e76;
+            background: var(--gray);
+            color: var(--light-yellow);
             font-family: "IM Fell English", serif;
-            font-style: normal;
-        }
-        h1{
-            font-family: "IM Fell English SC", serif;
+            font-size: 18px;
+            line-height: 1.7;
+            min-height: 100vh;
+            overflow-x: hidden;
         }
 
-        footer {
+        /* Nav (same as index) */
+        nav {
             position: fixed;
-            bottom: 0;
+            top: 0;
             left: 0;
             width: 100%;
+            background: var(--gray);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--light-gray);
+            z-index: 1000;
+            padding: 1.2rem 2rem;
         }
 
-
-        body {
+        nav ul {
+            list-style: none;
             display: flex;
-            align-items: center;
             justify-content: center;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            color: var(--light-yellow);
+            text-decoration: none;
+            font-family: "IM Fell English SC", serif;
+            font-size: 0.95rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
             position: relative;
         }
 
-        .wrapper {
-            text-align: center;
-            transform: translateY(-8%);
-        }
-
-        h1 {
-            font-size: 3rem;
-            letter-spacing: 0.05em;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-        }
-
-        .statement {
-            font-size: 1.3rem;
-            max-width: 1200px;
-            margin: 0 auto 2rem;
-            line-height: 1.4;
-        }
-
-        .link {
-            display: inline-block;
-            padding: 0.6rem 1.8rem;
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--blue);
-            border: 1px solid var(--blue);
-            text-decoration: none;
-            transition: background 0.3s ease;
-            text-transform: uppercase;
-            margin: 0 0.5rem;
-        }
-
-        .link:hover {
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
             background: var(--dark-yellow);
-            
+            transition: width 0.3s ease;
         }
 
-        
+        nav a:hover {
+            color: var(--dark-yellow);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        section {
+            padding: 7rem 2rem 4rem;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 3rem;
+            color: var(--light-yellow);
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 2px;
+            background: var(--dark-yellow);
+            margin: 1rem auto;
+        }
+
+        /* Crew layout */
+        .crew-member {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 3.5rem;
+            background: rgba(30, 33, 36, 0.5);
+            padding: 2rem;
+        }
+
+        .crew-member img {
+            width: 300px;
+            /* or any fixed width you prefer */
+            height: auto;
+            /* keeps the full image intact */
+            object-fit: contain;
+            /* ensures 100% of the image shows */
+            border: 1px solid var(--dark-yellow);
+            display: block;
+        }
+
+
+
+        .crew-text h3 {
+            font-family: "IM Fell English SC", serif;
+            font-size: 1.4rem;
+            color: var(--light-yellow);
+            margin-bottom: 0.7rem;
+        }
+
+        .crew-text p {
+            margin-bottom: 1rem;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .crew-member {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .crew-member img {
+                margin: 0 auto;
+                width: 70%;
+            }
+        }
     </style>
 </head>
 
 <body>
-    <div class="wrapper">
-        <h1>Contact</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="crew.html">The Crew</a></li>
+            <li><a href="myths.html">The Myths</a></li>
+            <li><a href="lookbook.html">Look Book</a></li>
+            <li><a href="funding.html">Fundraising</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
-    </div>
+    <section>
+        <h2>Contact</h2>
 
-   
-    <footer>
-        <p style="
-        text-align: center;
-        font-size: 0.9rem;
-        color: var(--text);
-        margin-bottom: 2.7rem;
-        padding-bottom: 2rem;
-        margin-top: 12rem;
-      ">
-            © 2025 Juliette Mangon |
-            <a href="https://juliettemangon.com/" target="_blank"
-                style="color: var(--text); text-decoration: underline;">
-                juliettemangon.com
-            </a>
-        </p>
-    </footer>
+
+
+    </section>
+
 </body>
 
 </html>
