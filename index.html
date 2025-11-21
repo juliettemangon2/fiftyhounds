@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fifty Hounds - A Thriller</title>
+    <title>Fifty Hounds</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -142,7 +142,7 @@
             background-repeat: no-repeat;
             position: relative;
             z-index: 2;
-            
+
         }
 
         .hero::before {
@@ -150,6 +150,45 @@
             position: absolute;
             inset: 0;
             background: rgba(0, 0, 0, 0.45);
+            /* adjust darkness here */
+            z-index: -1;
+        }
+
+        /* Hero Section */
+        .hero2 {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+            padding: 5rem 2rem 4rem;
+            padding-top: 1rem;
+            position: relative;
+            z-index: 2;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+
+        .hero2-content {
+            max-width: 1800px;
+        }
+
+        .hero2 {
+            background-image: url('woods.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            z-index: 2;
+
+        }
+
+        .hero2::before {
+            content: "";
+            position: absolute;
+            inset: 0;
             /* adjust darkness here */
             z-index: -1;
         }
@@ -224,7 +263,7 @@
         }
 
         /* Only constrain the non-hero sections */
-        section:not(.hero) {
+        section:not(.hero):not(.hero2) {
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -251,7 +290,7 @@
         }
 
         .content-box {
-            background: rgba(27, 32, 36, 0.5);
+            background: rgba(33, 37, 40, 0.8);
             border: 3px solid var(--light-gray);
             padding: 3rem;
             margin-bottom: 2rem;
@@ -284,14 +323,7 @@
             color: var(--light-yellow);
         }
 
-        /* Decorative Elements */
-        .ornament {
-            text-align: center;
-            color: var(--light-yellow);
-            font-size: 1.5rem;
-            margin: 0.5rem 0;
-            opacity: 0.5;
-        }
+
 
         /* Footer */
         footer {
@@ -369,7 +401,8 @@
             <p class="scroll-indicator">↓ Scroll to explore ↓</p>
         </div>
     </section>
-
+    <section class="hero2" id="home"style="background-image: url('woods2.jpg');">
+        <div class="hero2-content">
     <!-- Synopsis -->
     <section id="synopsis">
         <h2>Synopsis</h2>
@@ -388,8 +421,11 @@
             </p>
         </div>
     </section>
+    </div>
+    </section>
 
-    <div class="ornament">✦ ✦ ✦</div>
+    <section class="hero2" id="home"style="background-image: url('blood.jpg');">
+        <div class="hero2-content">
 
     <!-- Why This? Why Now? -->
     <section id="why">
@@ -409,37 +445,47 @@
             </p>
         </div>
     </section>
+     </div>
+    </section>
 
-    <div class="ornament">✦ ✦ ✦</div>
 
     <!-- Director Statement -->
-    <section id="director">
-        <h2>Director Statement</h2>
-        <div class="content-box">
-            <p>
-                Fifty Hounds was born from my obsession with two Greek myths—Actaeon and Orion—both of which depict the
-                sanctity and adoration surrounding the immortal, unattainable Diana, and the consequences that come with
-                loving a wild woman. Set in a past period but urgent today, it asks:
-            </p>
-            <p class="statement-highlight">
-                Who decides your future? Who owns your body? What is the price of female freedom?
-            </p>
-            <p>
-                In our reality where those in power, under the guise of protection, force women back into cages they
-                believed were long broken, this film becomes a warning… a spark. I am telling it now because the past is
-                not past, and the myths we think we have outgrown are still being lived.
-            </p>
-            <p class="director-signature">- Halle Skye</p>
+    <section class="hero2" id="home"style="background-image: url('woods.jpg');">
+        <div class="hero2-content">
+            <section id="director">
+                <h2>Director Statement</h2>
+                <div class="content-box">
+                    <p>
+                        Fifty Hounds was born from my obsession with two Greek myths—Actaeon and Orion—both of which
+                        depict the
+                        sanctity and adoration surrounding the immortal, unattainable Diana, and the consequences that
+                        come with
+                        loving a wild woman. Set in a past period but urgent today, it asks:
+                    </p>
+                    <p class="statement-highlight">
+                        Who decides your future? Who owns your body? What is the price of female freedom?
+                    </p>
+                    <p>
+                        In our reality where those in power, under the guise of protection, force women back into cages
+                        they
+                        believed were long broken, this film becomes a warning… a spark. I am telling it now because the
+                        past is
+                        not past, and the myths we think we have outgrown are still being lived.
+                    </p>
+                    <p class="director-signature">- Halle Skye</p>
+                </div>
+            </section>
+            <footer>
+                <p>
+                    © 2025 Juliette Mangon |
+                    <a href="https://juliettemangon.com/" target="_blank">juliettemangon.com</a>
+                </p>
+            </footer>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <p>
-            © 2025 Juliette Mangon |
-            <a href="https://juliettemangon.com/" target="_blank">juliettemangon.com</a>
-        </p>
-    </footer>
+
 </body>
 
 </html>
