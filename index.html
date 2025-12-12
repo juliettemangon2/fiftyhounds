@@ -18,7 +18,9 @@
             --light-gray: #232728;
             --dark-yellow: #8b3d16;
             --light-yellow: #d1c5b5;
+            --light: #fff7ec;
             --dark-orange: #8b3d16;
+            --orange: rgb(212, 117, 0);
         }
 
         * {
@@ -47,8 +49,9 @@
             content: "";
             position: fixed;
             inset: 0;
-            background: rgba(0, 0, 0, 0.45);
+            background: rgba(0, 0, 0, 0.4);
             z-index: 0;
+            pointer-events: none;
         }
 
         nav {
@@ -128,7 +131,7 @@
 
         .genre {
             font-family: "IM Fell English SC", serif;
-            font-size: 1rem;
+            font-size: 1.2rem;
             letter-spacing: 0.3em;
             color: var(--dark-orange);
             margin-bottom: 0.5rem;
@@ -137,12 +140,11 @@
 
         .status {
             font-family: "IM Fell English SC", serif;
-            font-size: 0.85rem;
+            font-size: 1rem;
             letter-spacing: 0.2em;
             color: var(--dark-orange);
             margin-bottom: 3rem;
             text-transform: uppercase;
-            opacity: 0.8;
         }
 
         .logline {
@@ -156,7 +158,7 @@
 
         .scroll-indicator {
             margin-top: 3rem;
-            font-size: 0.9rem;
+            font-size: 1rem;
             letter-spacing: 0.2em;
             text-transform: uppercase;
             color: var(--dark-yellow);
@@ -253,6 +255,32 @@
         footer a:hover {
             color: var(--light-yellow);
         }
+
+        .support-link {
+            text-align: center;
+            margin-top: 4rem;
+            margin-bottom: 2rem;
+            z-index: 1001;
+        }
+
+        .support-link a {
+            display: inline-block;
+            font-family: "IM Fell English SC", serif;
+            color: #fff;
+            font-size: 1.4rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 3px solid var(--dark-orange);
+            padding: 0.6rem 1.4rem;
+            transition: all 0.3s ease;
+            background-color: var(--dark-orange);
+        }
+
+        .support-link a:hover {
+            background: #fff;
+            color: var(--dark-orange);
+        }
     </style>
 </head>
 
@@ -274,8 +302,8 @@
             <p class="status">Pre-Production</p>
             <p class="logline">
                 One to wed. One to war.<br>
-                On the eve of their divide, <strong>twin hunters</strong> in <strong>1950s Virginia</strong> enact dire
-                plays to stay as <strong>one</strong>.
+                On the eve of their divide, twin hunters in 1950s Virginia enact dire
+                plays to stay as one.
             </p>
             <p class="scroll-indicator">↓ Scroll to explore ↓</p>
         </div>
@@ -285,11 +313,11 @@
         <h2>Synopsis</h2>
         <div class="content-box">
             <p>At eighteen, twins and childhood hunting partners Diana and Aidan are set on separate paths by their
-                widowed father. Diana to be married whilst Aidan enlists in the Korean War.</p>
-            <p><em>Fifty Hounds </em>follows the twins on their last day at home as Diana braces for her cage of
+                widowed father. Diana is to be married whilst Aidan enlists in the Korean War.</p>
+            <p><em>Fifty Hounds </em>follows the twins on their last day at home, as Diana braces for her cage of
                 domesticity and
                 Aidan prepares for battle. </p>
-            <p>In their final hours, they cling to their last bits of freedom. Diana sneaks out for one final hunt.
+            <p>In their final hours, they cling to their last bits of freedom: Diana sneaks out for one final hunt.
                 Aidan follows her. Beneath the dark of night one of them makes a choice that binds their two fates
                 forever. </p>
         </div>
@@ -328,6 +356,10 @@
             <p class="director-signature">- Halle Skye</p>
         </div>
     </section>
+    <div class="support-link">
+        <a href="funding.html">Support our film →</a>
+    </div>
+
 
     <footer>
         <p>© 2025 Juliette Mangon |

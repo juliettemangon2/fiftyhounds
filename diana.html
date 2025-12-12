@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,6 +22,9 @@
       --blood-red: #5c0000;
       --deep-red: #2a0000;
       --accent-gold: #92865d;
+      --dark-orange: #8b3d16;
+            --bright-orange: #c74707;
+            --light-yellow: #d1c5b5;
     }
 
     * {
@@ -34,7 +38,7 @@
     }
 
     body {
-    
+
       background: url('blood.jpg') center center / cover no-repeat fixed;
       color: var(--light-yellow);
       font-family: "IM Fell English", serif;
@@ -130,7 +134,7 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    
+
 
     .myth-text h3 {
       font-family: "IM Fell English SC", serif;
@@ -182,6 +186,31 @@
         padding: 7rem 1.5rem 4rem;
       }
     }
+
+    .support-link {
+      text-align: center;
+      margin-top: 4rem;
+      margin-bottom: 2rem;
+    }
+
+    .support-link a {
+      display: inline-block;
+      font-family: "IM Fell English SC", serif;
+      color: var(--light-yellow);
+      font-size: 1.4rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 3px solid var(--dark-orange);
+      padding: 0.6rem 1.4rem;
+      transition: all 0.3s ease;
+      background-color: var(--dark-orange)
+    }
+
+    .support-link a:hover {
+      background: var(--light-yellow);
+      color: var(--dark-orange);
+    }
   </style>
 </head>
 
@@ -202,10 +231,27 @@
     <!-- Actaeon -->
     <div class="myth">
       <div class="myth-text">
+        <p>With the ability to bring new life into the world, women became closely associated with the power of life and
+          death. This generative and creative power linked women symbolically to the earth—the mother of the natural
+          world. Ancient earth-mother deities arose from these associations, figures of immense power tied to creation.
+        </p>
+        <p>Figures such as Gaia and Hannahanna remind us that feminine power was once foundational to humanity's
+          understandings of creation, authority, and the natural world.</p>
+        <p>Inspired by the myths detailed below surrounding Artemis—a goddess defined by her demand for
+          independence—<em>Fifty Hounds</em> explores what has been lost in the modern understanding of female power.
+        </p>
+
+      </div>
+    </div>
+    <!-- Actaeon -->
+    <div class="myth">
+      <div class="myth-text">
         <h3>ACTAEON</h3>
         <h1>Taboo & Revenge</h1>
-        <p>A glimpse of Diana’s virginal body seals the fate of Actaeon, the hunter. The goddess transforms him into a stag—killed by his own fifty hounds.</p>
-        <p>“They gathered round him, and fixed their snouts deep in his flesh: tore him to pieces, he whose features only as a stag appeared.”</p>
+        <p>A glimpse of Diana’s virginal body seals the fate of Actaeon, the hunter. The goddess transforms him into a
+          stag—killed by his own fifty hounds.</p>
+        <p>“They gathered round him, and fixed their snouts deep in his flesh: tore him to pieces, he whose features
+          only as a stag appeared.”</p>
         <div class="source">
           <p>Ovid, <i>Metamorphoses</i>, Book III, trans. Brookes More (1922)</p>
         </div>
@@ -217,14 +263,20 @@
       <div class="myth-text">
         <h3>ORION</h3>
         <h1>Love & Betrayal</h1>
-        <p>Envious of Orion and Diana's bond, Apollo tricks her into shooting a distant figure in the ocean—unknowingly killing Orion. In grief, she casts him into the stars.</p>
-        <p>“The waves brought his slain body to the shore, and Diana, mourning his death, placed him among the constellations.”</p>
+        <p>Envious of Orion and Diana's bond, Apollo tricks her into shooting a distant figure in the ocean—unknowingly
+          killing Orion. In grief, she casts him into the stars.</p>
+        <p>“The waves brought his slain body to the shore, and Diana, mourning his death, placed him among the
+          constellations.”</p>
         <div class="source">
           <p>Hyginus, <i>Astronomica</i> Book II, trans. Mary Grant</p>
         </div>
       </div>
     </div>
   </section>
+  <div class="support-link">
+    <a href="[link]" target="_blank">Support our film →</a>
+  </div>
+
 
   <footer>
     <p>© 2025 Juliette Mangon |
@@ -232,4 +284,5 @@
     </p>
   </footer>
 </body>
+
 </html>

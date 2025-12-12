@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -95,15 +96,18 @@
       justify-content: center;
       align-items: center;
       width: 100%;
-      height: calc(100vh - 76px); /* subtract nav height */
-      margin-top: 76px; /* match nav height exactly */
+      height: calc(100vh - 76px);
+      /* subtract nav height */
+      margin-top: 76px;
+      /* match nav height exactly */
       background: var(--gray);
     }
 
     .lookbook-image {
       max-width: 100%;
       max-height: 100%;
-      object-fit: contain; /* ensures full image shows, no cropping */
+      object-fit: contain;
+      /* ensures full image shows, no cropping */
       display: block;
     }
 
@@ -129,6 +133,31 @@
         margin-top: 70px;
       }
     }
+    .support-link {
+  text-align: center;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+
+.support-link a {
+  display: inline-block;
+  font-family: "IM Fell English SC", serif;
+  color: var(--dark-yellow);
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1.5px solid var(--dark-yellow);
+  padding: 0.6rem 1.4rem;
+  transition: all 0.3s ease;
+}
+
+.support-link a:hover {
+  background: var(--dark-yellow);
+  color: var(--gray);
+  transform: scale(1.05);
+}
+
   </style>
 </head>
 
@@ -146,11 +175,20 @@
   <main>
     <img src="lookbook.jpg" alt="Fifty Hounds Look Book" class="lookbook-image">
   </main>
+  <main>
+    <img src="comparables.jpg" alt="Fifty Hounds Look Book" class="lookbook-image">
+  </main>
+  <div class="support-link">
+    <a href="[link]" target="_blank">Support our film →</a>
+  </div>
+
 
   <footer>
     <p>© 2025 Juliette Mangon |
       <a href="https://juliettemangon.com/" target="_blank">juliettemangon.com</a>
     </p>
   </footer>
+
 </body>
+
 </html>
