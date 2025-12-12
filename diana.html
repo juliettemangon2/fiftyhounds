@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diana - Fifty Hounds</title>
+
+  <!-- Fonts to match index -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --gray: #101111;
+      --light-gray: #232728;
+      --light-yellow: #d1c5b5;
+      --dark-yellow: #8b3d16;
+      --blood-red: #5c0000;
+      --deep-red: #2a0000;
+      --accent-gold: #92865d;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+    
+      background: url('blood.jpg') center center / cover no-repeat fixed;
+      color: var(--light-yellow);
+      font-family: "IM Fell English", serif;
+      font-size: 18px;
+      line-height: 1.7;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(16, 17, 17, 0.85);
+      border-bottom: 2px solid var(--light-gray);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      padding: 1.2rem 2rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+    }
+
+    nav a {
+      color: var(--light-yellow);
+      text-decoration: none;
+      font-family: "IM Fell English SC", serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--accent-gold);
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--dark-yellow);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    section {
+      position: relative;
+      z-index: 1;
+      padding: 8rem 2rem 5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 3rem;
+      color: var(--light-yellow);
+      font-family: "IM Fell English SC", serif;
+      text-shadow: 0 0 10px rgba(255, 220, 180, 0.2);
+    }
+
+
+
+    .myth {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+      background: rgba(10, 18, 19, 0.65);
+      padding: 2.5rem;
+      backdrop-filter: blur(3px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    
+
+    .myth-text h3 {
+      font-family: "IM Fell English SC", serif;
+      font-size: 1.8rem;
+      color: var(--dark-yellow);
+      letter-spacing: 0.08em;
+      margin-bottom: 0.3rem;
+    }
+
+    .myth-text h1 {
+      font-family: "Cinzel", serif;
+      font-size: 1.3rem;
+      color: var(--accent-gold);
+      margin-bottom: 0.8rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .myth-text p {
+      margin-bottom: 1rem;
+    }
+
+    .source p {
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--light-yellow);
+    }
+
+    footer {
+      text-align: center;
+      padding: 3rem 1rem;
+      font-size: 0.9rem;
+      color: var(--light-yellow);
+      z-index: 1;
+      position: relative;
+    }
+
+    footer a {
+      color: var(--accent-gold);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--light-yellow);
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 7rem 1.5rem 4rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="crew.html">The Crew</a></li>
+      <li><a href="diana.html">Diana</a></li>
+      <li><a href="lookbook.html">Look Book</a></li>
+      <li><a href="funding.html">Fundraising</a></li>
+    </ul>
+  </nav>
+
+  <section>
+    <h2>Diana</h2>
+
+    <!-- Actaeon -->
+    <div class="myth">
+      <div class="myth-text">
+        <h3>ACTAEON</h3>
+        <h1>Taboo & Revenge</h1>
+        <p>A glimpse of Diana’s virginal body seals the fate of Actaeon, the hunter. The goddess transforms him into a stag—killed by his own fifty hounds.</p>
+        <p>“They gathered round him, and fixed their snouts deep in his flesh: tore him to pieces, he whose features only as a stag appeared.”</p>
+        <div class="source">
+          <p>Ovid, <i>Metamorphoses</i>, Book III, trans. Brookes More (1922)</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Orion -->
+    <div class="myth">
+      <div class="myth-text">
+        <h3>ORION</h3>
+        <h1>Love & Betrayal</h1>
+        <p>Envious of Orion and Diana's bond, Apollo tricks her into shooting a distant figure in the ocean—unknowingly killing Orion. In grief, she casts him into the stars.</p>
+        <p>“The waves brought his slain body to the shore, and Diana, mourning his death, placed him among the constellations.”</p>
+        <div class="source">
+          <p>Hyginus, <i>Astronomica</i> Book II, trans. Mary Grant</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Juliette Mangon |
+      <a href="https://juliettemangon.com/" target="_blank">juliettemangon.com</a>
+    </p>
+  </footer>
+</body>
+</html>

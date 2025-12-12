@@ -2,32 +2,24 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Myths - Fifty Hounds</title>
-
-    <!-- MATCH INDEX.HTML FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
-    
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fundraising - Fifty Hounds</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet" />
 
     <style>
         :root {
-            --dark-blue: #0a1929;
-            --dark-blue2: #182b42;
             --gray: #101111;
-            --light-gray: #232728;
-            --mid-blue: #10263f;
+            --light-gray: #5b6466;
+            --light-yellow: #f3eadd;
             --dark-yellow: #8b3d16;
-            --dark-orange: #8b3d16;
-            --bright-orange: #ff5500;
-            --light-yellow: #d1c5b5;
-            --blood-red: #8b0000;
-            --forest-green: #1a3a2e;
+            --accent: #c67137;
+            --navy: #000000;
+
         }
 
         * {
@@ -36,27 +28,39 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            background: var(--gray);
-            color: var(--light-yellow);
+            background: url('woods2.jpg') center center / cover no-repeat fixed;
             font-family: "IM Fell English", serif;
             font-size: 18px;
             line-height: 1.7;
             min-height: 100vh;
             overflow-x: hidden;
+            color: var(--light-yellow);
+            position: relative;
         }
 
-        /* Nav (same as index) */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            backdrop-filter: blur(4px);
+            z-index: 0;
+        }
+
         nav {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background: var(--gray);
-            backdrop-filter: blur(10px);
+            background: rgba(16, 17, 17, 0.8);
             border-bottom: 2px solid var(--light-gray);
             z-index: 1000;
             padding: 1.2rem 2rem;
+            backdrop-filter: blur(8px);
         }
 
         nav ul {
@@ -85,12 +89,12 @@
             left: 0;
             width: 0;
             height: 1px;
-            background: var(--dark-yellow);
+            background: var(--accent);
             transition: width 0.3s ease;
         }
 
         nav a:hover {
-            color: var(--dark-yellow);
+            color: var(--accent);
         }
 
         nav a:hover::after {
@@ -98,18 +102,26 @@
         }
 
         section {
-            padding: 7rem 2rem 4rem;
-            max-width: 1300px;
+            position: relative;
+            z-index: 1;
+            padding: 8rem 2rem 5rem;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
+        p {
+            font-size: 1.5rem;
+            color: var(--light-yellow);
+        }
+
         h2 {
-            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-size: clamp(2rem, 5vw, 3rem);
             text-align: center;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 3rem;
+            letter-spacing: 0.12em;
+            margin-bottom: 2rem;
             color: var(--light-yellow);
+            font-family: "IM Fell English SC", serif;
         }
 
         h2::after {
@@ -117,53 +129,93 @@
             display: block;
             width: 100px;
             height: 2px;
-            background: var(--dark-yellow);
+            background: var(--navy);
             margin: 1rem auto;
         }
 
-        /* Crew layout */
-        .crew-member {
+        .content-box {
+            background: rgba(33, 37, 40, 0.8);
+            border: 3px solid var(--light-gray);
+            padding: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .content-box p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            font-size: 1.3rem;
+        }
+
+        .email-box {
             display: flex;
-            gap: 2rem;
-            margin-bottom: 3.5rem;
-            background: rgba(30, 33, 36, 0.5);
-            padding: 2rem;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 3rem;
         }
 
-        .crew-member img {
-            width: 300px;
-            /* or any fixed width you prefer */
-            height: auto;
-            /* keeps the full image intact */
-            object-fit: contain;
-            /* ensures 100% of the image shows */
-            border: 1px solid var(--dark-yellow);
-            display: block;
-        }
-
-
-
-        .crew-text h3 {
-            font-family: "IM Fell English SC", serif;
-            font-size: 1.4rem;
-            color: var(--light-yellow);
-            margin-bottom: 0.7rem;
-        }
-
-        .crew-text p {
+        .email-box p {
+            font-style: italic;
             margin-bottom: 1rem;
+            font-size: 1.35rem;
+            text-align: center;
+            color: var(--light-yellow);
         }
 
-        /* Mobile */
-        @media (max-width: 768px) {
-            .crew-member {
+        form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        input[type="email"] {
+            flex: 1;
+            padding: 0.8rem 1rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+            font-size: 1rem;
+            font-family: "IM Fell English", serif;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--navy);
+            outline: none;
+            transition: background 0.3s ease, border 0.3s ease;
+        }
+
+        input[type="email"]:focus {
+            background: rgba(255, 255, 255, 0.7);
+            border-color: var(----light-gray);
+        }
+
+        button {
+            background: var(--dark-yellow);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            font-family: "IM Fell English SC", serif;
+            letter-spacing: 0.1em;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background: var(--navy);
+        }
+
+
+
+
+        @media (max-width: 600px) {
+            form {
                 flex-direction: column;
-                text-align: center;
             }
 
-            .crew-member img {
-                margin: 0 auto;
-                width: 70%;
+            input[type="email"],
+            button {
+                width: 100%;
             }
         }
     </style>
@@ -174,20 +226,70 @@
         <ul>
             <li><a href="index.html#home">Home</a></li>
             <li><a href="crew.html">The Crew</a></li>
-            <li><a href="myths.html">The Myths</a></li>
+            <li><a href="diana.html">Diana</a></li>
             <li><a href="lookbook.html">Look Book</a></li>
             <li><a href="funding.html">Fundraising</a></li>
-            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
     <section>
         <h2>Fundraising</h2>
+        <div class="content-box">
+            <p><em>Fifty Hounds</em> is an independent short film supported by a small team of artists and
+                collaborators. Every contribution — whether through funding, sharing, or simply following our progress —
+                helps us bring this story to life.</p>
+            <p>We are raising funds to support our production, locations, and original score. Our goal is to make a film
+                that honors women's voices and reimagines myth through a contemporary lens.</p>
+        </div>
 
+        <h2>Support Our Film</h2>
+        <div class="content-box">
+            <p>You can visit our Seed&Spark campaign to contribute directly or share the project with others who might
+                connect with it.</p>
+        </div>
 
+        <h2>Stay Connected</h2>
+        <div class="content-box email-box">
+            <p>Join our email list for updates on production, release announcements, and screenings.</p>
 
+            <!-- FORM -->
+            <form id="emailForm" action="https://formspree.io/f/meoypvpj" method="POST">
+                <input type="email" name="email" placeholder="Enter your email" required />
+                <button type="submit">Join List</button>
+                <p id="formMessage" style="margin-top: 1rem; font-style: italic;"></p>
+            </form>
+        </div>
     </section>
+
 
 </body>
 
 </html>
+
+
+<script>
+    const form = document.getElementById("emailForm");
+    const message = document.getElementById("formMessage");
+
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault(); // prevent page reload
+
+        const formData = new FormData(form);
+        try {
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: formData,
+                headers: { Accept: "application/json" },
+            });
+
+            if (response.ok) {
+                message.textContent = "Thanks for joining! We'll keep you updated.";
+                form.reset();
+            } else {
+                message.textContent = "Something went wrong — please try again later.";
+            }
+        } catch (error) {
+            message.textContent = "Network error. Please try again.";
+        }
+    });
+</script>

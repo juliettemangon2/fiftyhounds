@@ -22,10 +22,11 @@
             --mid-blue: #10263f;
             --dark-yellow: #8b3d16;
             --dark-orange: #8b3d16;
-            --bright-orange: #ff5500;
+            --bright-orange: #c74707;
             --light-yellow: #d1c5b5;
             --blood-red: #8b0000;
             --forest-green: #1a3a2e;
+            --light-gray: #2f4a4d;
         }
 
         * {
@@ -50,9 +51,9 @@
             top: 0;
             left: 0;
             width: 100%;
-            background: var(--gray);
+            background: rgba(16, 17, 17, 0.85);
             backdrop-filter: blur(10px);
-            border-bottom: 2px solid var(--light-gray);
+            border-bottom: 3px solid var(--light-gray);
             z-index: 1000;
             padding: 1.2rem 2rem;
         }
@@ -126,10 +127,10 @@
             display: flex;
             gap: 2rem;
             margin-bottom: 0.5rem;
-            background: rgba(30, 33, 36, 0.8);
+            background: rgba(30, 33, 36, 0.9);
             padding: 2rem;
 
-            max-width: 1300px;
+            max-width: 1200px;
         }
 
         .crew-member img {
@@ -157,7 +158,7 @@
         }
 
         .hero2-content {
-            max-width: 1800px;
+            max-width: 1500px;
         }
 
         .hero2::before {
@@ -176,6 +177,7 @@
 
         .crew-text p {
             margin-bottom: 1rem;
+            font-size: 1.2rem;
         }
 
         /* Mobile */
@@ -198,14 +200,13 @@
         <ul>
             <li><a href="index.html#home">Home</a></li>
             <li><a href="crew.html">The Crew</a></li>
-            <li><a href="myths.html">The Myths</a></li>
+            <li><a href="diana.html">Diana</a></li>
             <li><a href="lookbook.html">Look Book</a></li>
             <li><a href="funding.html">Fundraising</a></li>
-            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
-    
+
 
     <!-- HALLE / HERO2 FULL WIDTH -->
     <section class="hero2" id="home" style="background-image: url('daygreen.JPG');">
@@ -214,28 +215,18 @@
             <div class="crew-member">
                 <img src="headshots/halle.jpeg" alt="Halle Skye headshot" loading="eager">
                 <div class="crew-text">
-                    <h3 >HALLE SKYE (Writer/Director)</h3>
-                    <p>Halle Skye is a British-born filmmaker who is drawn to storytelling as a way of making sense
-                        of the
-                        world. She moved to New York City to expand her craft, earning a BFA in Film & Television
-                        from NYU's
-                        Tisch School of the Arts. Her work gravitates toward dramas that exist in the space between
-                        intimacy
-                        and rupture. She is fascinated by familial dynamics, exploring how nostalgia and resentment
-                        ripple
-                        through generations, and is particularly drawn to the tension between the everyday and the
-                        extraordinary. </p>
-                    <p>Upcoming short films “Mare” and “Sundown Sons” will complete festival circuits in 2026.
-                        “Mare”
-                        examines the intersection of grief and identity through the story of a young equestrian with
-                        terminal cancer, whilst “Sundown Sons” captures the restless energy of an alcoholic youth on
-                        the
-                        cusp of repentance. Together, they reflect her evolving style: bold yet grounded in
-                        character. </p>
+                    <h3>HALLE SKYE (Writer/Director)</h3>
+                    <p style="font-size: 1.5rem;">International filmmaker, Halle Skye, is a creator of narrative and historical dramas that depict
+                        themes of nostalgia and death. </p>
+                        <p style="font-size: 1.5rem;">In May 2024 she graduated NYU Tisch School of the Arts with a BFA
+                        in Film & TV.</p>
+                        <p style="font-size: 1.5rem;"> Her British shorts, MARE and BILLY'S BIRDS, will be circulating the global
+                        festival circuit in 2026. </p>
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- CREW LIST (CONSTRAINED WIDTH) -->
     <section class="hero2" id="home" style="background-image: url('daybarn.JPG'); ">
@@ -246,21 +237,40 @@
                 <img src="headshots/lex.jpeg" alt="Alexandra Mettler headshot" loading="eager">
                 <div class="crew-text">
                     <h3>ALEXANDRA METTLER (Director of Photography)</h3>
-                    <p style="font-size: 1.3rem;">Alexandra Mettler is a New York City based Director of Photography,
+                    <p style="font-size: 1.4rem;">Alexandra Mettler is a New York City based Director of Photography,
                         originally from Eugene,
                         OR. She
                         works primarily in the narrative and documentary fields, specializing in 16mm & 35mm film.
                         Her
-                        recognized work includes “Robster”, “The Chlorine Bible”, and “Partus”. 
+                        recognized work includes “Robster”, “The Chlorine Bible”, and “Partus”.
                     </p>
-                    <p style="font-size: 1.3rem;">She is also the 2024 recipient of the ARRI Volker Bahnnemann Award for achievement in cinematography.</p>
+                    <p style="font-size: 1.4rem;">She is also the 2024 recipient of the ARRI Volker Bahnnemann Award for
+                        achievement in cinematography.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- HALLE / HERO2 FULL WIDTH -->
+    <section class="hero2" id="home" style="background-image: url('laundry.JPG');">
+        <div class="hero2-content">
+            <div class="crew-member">
+                <img src="headshots/carley.jpg" alt="Carley headshot" loading="eager">
+                <div class="crew-text">
+                    <h3>CARLEY LOVITO (Lead Producer)</h3>
+                    <p style="font-size:1.3rem;"> Carley Lovito is a Director, Producer, and Writer dedicated to telling female centered stories.
+                        Her production company 286 cultivates creative community and prioritizes underrepresented female
+                        focused narratives, aiming to create spaces where artists and audiences alike feel deeply seen,
+                        heard, and inspired.</p>
+                    <p style="font-size:1.3rem;">She has produced and directed award winning films including “Can’t You See I’m Trying” “Holy
+                        Water” “Peach Fuzz” and “Everything I Never Told You” and is currently the lead producer of the
+                        world premiere of Clifford Odets’ “The Nursery”. </p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- MIRA -->
-    <section class="hero2" id="home" style="background-image: url('barninterior.JPG'); ">
+    <section class="hero2" id="home" style="background-image: url('whitehouse.JPG'); ">
         <div class="hero2-content">
             <div class="crew-member">
                 <img src="headshots/mira.jpeg" alt="Mira Young headshot" loading="eager">
@@ -290,30 +300,30 @@
 
     <section class="hero2" id="home" style="background-image: url('wood.JPG'); ">
         <div class="hero2-content">
-    <!-- RALPH -->
-    <div class="crew-member">
-        <img src="headshots/ralph.jpeg" alt="Ralph Calle headshot" loading="eager">
-        <div class="crew-text">
-            <h3>RALPH CALLE (Producer)</h3>
-            <p>Ralph C. Schulz is a Swiss-Peruvian-American film producer, director, actor, and distributor.
-                His
-                award-winning debut film screened in New York, Los Angeles, and Milan and was distributed by
-                Swiss
-                Films. He is the co-founder and CEO of RISE FLIX, a platform connecting emerging filmmakers
-                with
-                industry professionals. Ralph has helped creators secure representation, land production
-                deals, and
-                option feature scripts. </p>
-            <p>He is the distributor of the Midwestern Emmy-winning short "Room Tone" and various other
-                shorts
-                Academy Award-shortlisted. His credits include HBO’s "And Just Like That" and "The Chair
-                Company",
-                and a documentary produced by three-time Academy Award winner Mark Harris.
-            </p>
-        </div>
-    </div>
+            <!-- RALPH -->
+            <div class="crew-member">
+                <img src="headshots/ralph.jpeg" alt="Ralph Calle headshot" loading="eager">
+                <div class="crew-text">
+                    <h3>RALPH CALLE (Producer)</h3>
+                    <p>Ralph C. Schulz is a Swiss-Peruvian-American film producer, director, actor, and distributor.
+                        His
+                        award-winning debut film screened in New York, Los Angeles, and Milan and was distributed by
+                        Swiss
+                        Films. He is the co-founder and CEO of RISE FLIX, a platform connecting emerging filmmakers
+                        with
+                        industry professionals. Ralph has helped creators secure representation, land production
+                        deals, and
+                        option feature scripts. </p>
+                    <p>He is the distributor of the Midwestern Emmy-winning short "Room Tone" and various other
+                        shorts
+                        Academy Award-shortlisted. His credits include HBO’s "And Just Like That" and "The Chair
+                        Company",
+                        and a documentary produced by three-time Academy Award winner Mark Harris.
+                    </p>
+                </div>
+            </div>
 
-    </div>
+        </div>
     </section>
 
 </body>
