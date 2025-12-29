@@ -216,6 +216,95 @@
             background: var(--navy);
         }
 
+        /* Budget split image */
+        .budget-split-img {
+            height: 90%;
+            max-width: 900px;
+
+            display: block;
+            margin: 2rem auto 0;
+            border: 3px solid var(--light-gray);
+            background: rgba(33, 37, 40, 0.35);
+        }
+
+        /* Incentives */
+        .incentives-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.25rem;
+        }
+
+        .incentive-card {
+            background: rgba(33, 37, 40, 0.85);
+            border: 3px solid var(--light-gray);
+            padding: 1.75rem;
+        }
+
+        .incentive-card .tier {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 1rem;
+            padding-bottom: 0.75rem;
+            margin-bottom: 0.75rem;
+            border-bottom: 2px solid rgba(243, 234, 221, 0.25);
+        }
+
+        .incentive-card .amount {
+            font-family: "IM Fell English SC", serif;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-size: 1.35rem;
+            color: var(--accent);
+        }
+
+        .incentive-card .label {
+            font-family: "IM Fell English SC", serif;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-size: 1rem;
+            color: var(--light-yellow);
+            opacity: 0.85;
+        }
+
+        .incentive-card p {
+            text-align: left;
+            font-size: 1.25rem;
+            margin-bottom: 0.9rem;
+        }
+
+        .incentive-card .includes-title {
+            font-family: "IM Fell English SC", serif;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 1.2rem;
+            font-style: oblique;
+            color: var(--accent);
+            margin: 0.25rem 0 0.5rem;
+        }
+
+        .incentive-card ul {
+            margin-left: 1.15rem;
+            margin-top: 0.25rem;
+        }
+
+        .incentive-card li {
+            font-size: 1.2rem;
+            margin-bottom: 0.35rem;
+        }
+
+        @media (max-width: 900px) {
+            .incentives-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .incentives-grid .incentive-card:last-child {
+            grid-column: 1 / -1;
+        }
+
+
 
 
 
@@ -286,16 +375,21 @@
                 story to life.</p>
             <p>We are raising funds to support production—helping us secure equipment, transportation, and compensate
                 our crew. </p>
-            <p><strong>Our current goal is to raise our skeleton budget of $25,000</strong>. This includes reduced rates
+            <p><strong>Our current goal is to raise our skeleton budget of $25,000.</strong> </p>
+
+            <p>This includes reduced rates
                 for cast and crew, along with deferred payment for our co-creators. </p>
             <p>Financing secured over the skeleton budget—from grants and crowdfunding—will allow us to pay our crew
                 their full asking rates, cover writer/director Halle Skye's travel and directorial rate, and make more
                 artistically ambitious choices with our project. </p>
-            <p>By weaving together myth and film, we aim to start greater conversations surrounding the necessity of
-                female autonomy over one's future and body.</p>
+            <p>Stories have the power to broaden perspectives and challenge the systems that shape our world. With this
+                film, we reimagine ancient narratives surrounding the inherent powers of womanhood, using them as a lens
+                to spark conversation about female autonomy—over one’s body and one’s future.
+            </p>
         </div>
 
         <div class="content-box" style=" padding-bottom: 1rem; margin-top:4rem;">
+            <h2>SEED&SPARK LINK </h2>
             <h2>Pledge</h2>
             <p style="font-size:1.6rem; text-align:center">Your donation will help bring this film to life, supporting
                 both our shoot and post-production efforts.
@@ -311,19 +405,18 @@
             <h2>Follow</h2>
             <p style="font-size:1.6rem; text-align:center;">Click the <strong>Follow</strong> button at the top of our
                 crowdfunding page—it's free and helps us unlock important platform benefits.</p>
-            <p style="font-size:1.6rem; text-align:center">find our Seed & Spark to support our film at the link below:
-                [link]</p>
+
 
         </div>
-        <h2 style="margin-top:4rem;">Attaches Production Companies</h2>
+        <h2 style="margin-top:4rem; font-size:2.2rem;">Attached Production Companies</h2>
         <div class="content-box">
-            <h2>286 PRODUCTIONS</h2>
+            <h2 style="font-size:2.2rem;">286 PRODUCTIONS</h2>
             <p><em>286 PRODUCTIONS</em> is a female-run, artist-first production company championing bold, resonant
                 storytelling through female perspectives while cultivating creative community. Founded by
                 Writer/Director Carley Lovito, 286 has lead works including the world premiere of Clifford Odets' The
                 Nursery, The award winning film ‘Everything I Never Told You' and up and coming films including ‘Can't
                 You See I'm Trying', ‘Holy Water', ‘Peach Fuzz' and ‘It Girl'.</p>
-            <h2>Rise studios</h2>
+            <h2 style="font-size:2.2rem;">Rise studios</h2>
             <p><em>RISE STUDIOS</em> is the production branch of RISE FLIX that handles the distribution company’s
                 production services from sourcing financing, to leveraging partnerships with rental houses for
                 equipment, to building cost-effective professional crews from their filmmaker network, to sourcing name
@@ -365,18 +458,121 @@
 
 
         </div>
+        <img class="budget-split-img" src="budgetsplit.jpeg" alt="Budget split breakdown" />
+
         <h2 style="margin-top:5rem;">Incentives</h2>
         <div class="content-box">
-            <p>$25: donate and get a thank you note directly from our team—please include your email to receive the note
-            </p>
-            <p>$50: see your name listed on the fundraising page of our films website to acknowledge you as a special supporter and thank you for your support on the project</p>
-            <p>$100: receive access to vote between the three final film posters when we get into post-production—please
-                include email to be able to vote</p>
+            <div class="incentives-grid">
 
+                <div class="incentive-card">
+                    <div class="tier">
+                        <div class="amount">$50</div>
+                        <div class="label">Supporter</div>
+                    </div>
+                    <p style="font-size: 1.3rem;">See your name listed on the fundraising page of our film’s website to acknowledge you as a
+                        special supporter and thank you for your support on the project.</p>
+                </div>
 
+                <div class="incentive-card">
+                    <div class="tier">
+                        <div class="amount">$100</div>
+                        <div class="label">Poster Vote</div>
+                    </div>
+                    <p>Receive access to vote between the three final film posters when we get into post-production.
+                        Please include your email to be able to vote.</p>
+                    <div class="includes-title">This also includes:</div>
+                    <ul>
+                        <li>Your name listed on the fundraising page of our film’s website to acknowledge you as a
+                            special supporter</li>
+                    </ul>
+                </div>
 
+                <div class="incentive-card">
+                    <div class="tier">
+                        <div class="amount">$250</div>
+                        <div class="label">Thank You Video</div>
+                    </div>
+                    <p>Receive a thank you video from one of our cast members from set. Please include your email to
+                        receive the video.</p>
+                    <div class="includes-title">This also includes:</div>
+                    <ul>
+                        <li>Access to vote between the three final film posters</li>
+                        <li>Your name listed on the fundraising page of our film’s website to acknowledge you as a
+                            special supporter</li>
+                    </ul>
+                </div>
 
+                <div class="incentive-card">
+                    <div class="tier">
+                        <div class="amount">$350</div>
+                        <div class="label">BTS Early Access</div>
+                    </div>
+                    <p>Receive early access to behind the scenes photos and videos. Please include your email to receive
+                        materials.</p>
+                    <div class="includes-title">This also includes:</div>
+                    <ul>
+                        <li>A thank you video from one of our cast members from set</li>
+                        <li>Access to vote between the three final film posters</li>
+                        <li>Your name listed on the fundraising page of our film’s website to acknowledge you as a
+                            special supporter</li>
+                    </ul>
+                </div>
+
+                <div class="incentive-card">
+                    <div class="tier">
+                        <div class="amount">$500</div>
+                        <div class="label">Signed Poster</div>
+                    </div>
+                    <p>Receive a signed film poster from our cast and crew. Please include your email for contact
+                        purposes.</p>
+                    <div class="includes-title">This also includes:</div>
+                    <ul>
+                        <li>Early access to behind the scenes photos and videos</li>
+                        <li>A thank you video from one of our cast members from set</li>
+                        <li>Access to vote between the three final film posters</li>
+                        <li>Your name listed on the fundraising page of our film’s website to acknowledge you as a
+                            special supporter</li>
+                    </ul>
+                </div>
+
+                <div class="incentive-card">
+                    <div class="tier">
+                        <div class="amount">$1000</div>
+                        <div class="label">Poster + Script</div>
+                    </div>
+                    <p>Receive a signed special edition poster from our cast and crew and a signed script. Please
+                        include your email for contact purposes.</p>
+                    <div class="includes-title">This also includes:</div>
+                    <ul>
+                        <li>Early access to behind the scenes photos and videos</li>
+                        <li>A thank you video from one of our cast members from set</li>
+                        <li>Access to vote between the three final film posters</li>
+                        <li>Your name listed on the fundraising page of our film’s website to acknowledge you as a
+                            special supporter</li>
+                    </ul>
+                </div>
+
+                <div class="incentive-card">
+                    <div class="tier">
+                        <div class="amount">$2500</div>
+                        <div class="label">Screening + Credits</div>
+                    </div>
+                    <p>Receive an invitation to an early friends and family screening and special thanks in the credits.
+                        Please include your email for further contact.</p>
+                    <div class="includes-title">This also includes:</div>
+                    <ul>
+                        <li>A signed special edition poster from our cast and crew and a signed script</li>
+                        <li>Early access to behind the scenes photos and videos</li>
+                        <li>A thank you video from one of our cast members from set</li>
+                        <li>Access to vote between the three final film posters</li>
+                        <li>Your name listed on the fundraising page of our film’s website to acknowledge you as a
+                            special supporter</li>
+                    </ul>
+                </div>
+
+            </div>
         </div>
+
 
 
         <h2 style="margin-top:4rem;">Stay Connected</h2>
