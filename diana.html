@@ -507,19 +507,28 @@
     }
 
     @media (max-width: 768px) {
-      body {
-        background-attachment: scroll;
-        background-size: cover;
-        background-position: center top;
-      }
-    }
-
-    /* iOS Safari specific fix */
-    @supports (-webkit-touch-callout: none) {
-      body {
+    body {
         background-attachment: scroll !important;
-      }
+        background-size: cover;
+        background-position: center center;
     }
+    
+    body::before {
+        position: absolute;
+        height: 100%;
+    }
+}
+
+/* iOS Safari specific fix */
+@supports (-webkit-touch-callout: none) {
+    body {
+        background-attachment: scroll !important;
+    }
+    
+    body::before {
+        position: absolute;
+    }
+}
   </style>
 </head>
 
