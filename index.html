@@ -652,10 +652,38 @@
         position: absolute;
     }
 }
+/* Mobile background image fix */
+.mobile-bg {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    body {
+        background: var(--gray) !important;
+    }
+    
+    body::before {
+        background: rgba(0, 0, 0, 0.4);
+    }
+    
+    .mobile-bg {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('dress.jpeg');
+        background-size: cover;
+        background-position: center center;
+        z-index: -1;
+    }
+}
     </style>
 </head>
 
 <body>
+    <div class="mobile-bg"></div>
     <nav>
         <button class="menu-toggle" aria-label="Toggle menu">
             <span></span>
