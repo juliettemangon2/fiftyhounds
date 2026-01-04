@@ -233,28 +233,7 @@
             color: var(--light-yellow);
         }
 
-        footer {
-            padding: 3rem 2rem;
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
 
-        footer p {
-            font-size: 0.9rem;
-            color: var(--light-yellow);
-            margin-bottom: 0;
-        }
-
-        footer a {
-            color: var(--dark-yellow);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        footer a:hover {
-            color: var(--light-yellow);
-        }
 
         .support-link {
             text-align: center;
@@ -281,11 +260,384 @@
             background: #fff;
             color: var(--dark-orange);
         }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 1001;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 28px;
+            height: 2px;
+            background: var(--light-yellow);
+            margin: 6px 0;
+            transition: all 0.3s ease;
+        }
+
+        /* Hamburger animation when open */
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* Tablet breakpoint */
+        @media (max-width: 1024px) {
+            nav ul {
+                gap: 1.5rem;
+            }
+
+            .hero {
+                padding: 7rem 1.5rem 3rem;
+            }
+
+            section {
+                padding: 4rem 1.5rem;
+            }
+
+            .content-box {
+                padding: 2rem;
+            }
+        }
+
+        /* Mobile breakpoint - hamburger menu activates */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 1.5rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .menu-toggle {
+                display: block;
+                margin-left: auto;
+            }
+
+            nav ul {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 75%;
+                max-width: 300px;
+                height: 100vh;
+                height: 100dvh;
+                background: rgba(16, 17, 17, 0.97);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 0;
+                padding: 2rem;
+                transition: right 0.4s ease;
+                border-left: 2px solid var(--light-gray);
+            }
+
+            nav ul.active {
+                right: 0;
+            }
+
+            nav ul li {
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid var(--light-gray);
+            }
+
+            nav ul li:last-child {
+                border-bottom: none;
+            }
+
+            nav a {
+                display: block;
+                font-size: 1.1rem;
+                letter-spacing: 0.12em;
+                padding: 1.25rem 1rem;
+                width: 100%;
+            }
+
+            nav a::after {
+                display: none;
+            }
+
+            nav a:active {
+                background: rgba(139, 61, 22, 0.3);
+            }
+
+            /* Overlay when menu is open */
+            .menu-overlay {
+                display: none;
+                position: fixed;
+                inset: 0;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 999;
+            }
+
+            .menu-overlay.active {
+                display: block;
+            }
+
+            .hero {
+                min-height: 100svh;
+                padding: 5rem 1.25rem 2rem;
+            }
+
+            h1 {
+                letter-spacing: 0.1em;
+            }
+
+            .genre {
+                font-size: 1.1rem;
+                letter-spacing: 0.15em;
+            }
+
+            .status {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .logline {
+                margin: 1.5rem auto 2rem;
+                line-height: 1.7;
+            }
+
+            .scroll-indicator {
+                margin-top: 2.5rem;
+                font-size: 1.1rem;
+            }
+
+            section {
+                padding: 3rem 1.25rem;
+            }
+
+            .content-box {
+                padding: 1.75rem;
+            }
+
+            .content-box p {
+                text-align: left;
+            }
+
+            .statement-highlight {
+                font-size: 1.15rem;
+                padding-left: 1.5rem;
+                margin: 1.5rem 0;
+            }
+
+            .support-link {
+                margin-top: 3rem;
+            }
+
+            .support-link a {
+                font-size: 1.2rem;
+                padding: 0.5rem 1.2rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            form {
+                flex-direction: column;
+            }
+
+            input[type="email"],
+            form button {
+                width: 100%;
+            }
+        }
+
+        /* Mobile phones */
+        @media (max-width: 480px) {
+            nav {
+                padding: 0.85rem 1rem;
+            }
+
+            nav ul {
+                width: 85%;
+                max-width: none;
+            }
+
+            nav a {
+                font-size: 1.05rem;
+                padding: 1.1rem 1rem;
+            }
+
+            .hero {
+                padding: 4.5rem 1rem 2rem;
+            }
+
+            h1 {
+                letter-spacing: 0.08em;
+                margin-bottom: 0.75rem;
+            }
+
+            .genre {
+                font-size: 0.95rem;
+                letter-spacing: 0.12em;
+                margin-bottom: 0.25rem;
+            }
+
+            .status {
+                font-size: 0.9rem;
+                letter-spacing: 0.12em;
+                margin-bottom: 1.5rem;
+            }
+
+            .logline {
+                margin: 1rem auto 1.5rem;
+                line-height: 1.6;
+            }
+
+            .scroll-indicator {
+                margin-top: 2rem;
+                font-size: 1rem;
+                letter-spacing: 0.15em;
+            }
+
+            section {
+                padding: 2.5rem 1rem;
+            }
+
+            section h2 {
+                letter-spacing: 0.08em;
+                margin-bottom: 1.5rem;
+            }
+
+            section h2::after {
+                width: 60px;
+                margin: 0.75rem auto;
+            }
+
+            .content-box {
+                padding: 1.25rem;
+                border-width: 2px;
+            }
+
+            .content-box p {
+                margin-bottom: 1.25rem;
+                font-size: 1rem;
+                line-height: 1.65;
+            }
+
+            .statement-highlight {
+                font-size: 1.05rem;
+                padding-left: 1rem;
+                margin: 1.25rem 0;
+                border-left-width: 2px;
+            }
+
+            .director-signature {
+                margin-top: 1.5rem;
+            }
+
+            .support-link {
+                margin-top: 2.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .support-link a {
+                font-size: 1.1rem;
+                padding: 0.5rem 1rem;
+                border-width: 2px;
+            }
+
+        }
+
+        /* Very small screens */
+        @media (max-width: 360px) {
+            .hero {
+                padding-top: 4rem;
+            }
+
+            .content-box {
+                padding: 1rem;
+            }
+
+            .support-link a {
+                font-size: 1rem;
+            }
+        }
+
+        /* Fix for iOS Safari address bar */
+        @supports (-webkit-touch-callout: none) {
+            .hero {
+                min-height: -webkit-fill-available;
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1.5rem 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+
+
+        footer p {
+            font-family: "IM Fell English", serif;
+            font-size: 0.85rem;
+            color: var(--light-yellow, #d1c5b5);
+            letter-spacing: 0.05em;
+            opacity: 0.75;
+            margin: 0;
+        }
+
+        footer a {
+            color: var(--light-yellow, #d1c5b5);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid var(--light-yellow);
+        }
+
+        footer a:hover {
+            color: var(--dark-yellow, #8b3d16);
+            border-bottom-color: var(--dark-yellow, #8b3d16);
+        }
+
+
+
+        @media (max-width: 768px) {
+            footer {
+                padding: 2.5rem 1rem 1.5rem;
+            }
+
+            footer::before {
+                font-size: 0.8rem;
+            }
+
+            footer p {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            footer {
+                padding: 2rem 1rem 1.25rem;
+            }
+
+            footer p {
+                font-size: 0.75rem;
+            }
+        }
     </style>
 </head>
 
 <body>
     <nav>
+        <button class="menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="crew.html">The Crew</a></li>
@@ -294,6 +646,7 @@
             <li><a href="funding.html">Fundraising</a></li>
         </ul>
     </nav>
+    <div class="menu-overlay"></div>
 
     <section class="hero" id="home">
         <div class="hero-content">
@@ -367,11 +720,33 @@
     </div>
 
 
-    <footer>
-        <p>© 2025 Juliette Mangon |
-            <a href="https://juliettemangon.com/" target="_blank">juliettemangon.com</a>
-        </p>
-    </footer>
+ <footer>
+    <p>© 2025 Juliette Mangon | <a href="https://juliettemangon.com/" target="_blank">juliettemangon.com</a></p>
+</footer>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('nav ul');
+        const menuOverlay = document.querySelector('.menu-overlay');
+
+        function toggleMenu() {
+            menuToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+        }
+
+        menuToggle.addEventListener('click', toggleMenu);
+        menuOverlay.addEventListener('click', toggleMenu);
+
+        // Close menu when a link is clicked
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navMenu.classList.contains('active')) {
+                    toggleMenu();
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

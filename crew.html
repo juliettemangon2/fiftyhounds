@@ -27,7 +27,7 @@
             --light-yellow: #d1c5b5;
             --blood-red: #8b0000;
             --forest-green: #1a3a2e;
-            --light-gray: #2f4a4d;
+            --light-gray: #383e3f;
         }
 
         * {
@@ -417,12 +417,353 @@
                 margin: 0 auto 1.5rem;
             }
         }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 1001;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 28px;
+            height: 2px;
+            background: var(--light-yellow);
+            margin: 6px 0;
+            transition: all 0.3s ease;
+        }
+
+        /* Hamburger animation when open */
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* Overlay when menu is open */
+        .menu-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        .menu-overlay.active {
+            display: block;
+        }
+
+        /* Tablet breakpoint */
+        @media (max-width: 1024px) {
+            nav ul {
+                gap: 1.5rem;
+            }
+
+            .crew-content {
+                padding: 9rem 1.5rem 5rem;
+            }
+
+            .crew-member {
+                padding: 1.75rem 2rem;
+                gap: 1.75rem;
+            }
+
+            .crew-member img {
+                width: 200px;
+            }
+
+            .crew-text p {
+                font-size: 1.15rem;
+            }
+        }
+
+        /* Mobile breakpoint - hamburger menu activates */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 1.5rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .menu-toggle {
+                display: block;
+                margin-left: auto;
+            }
+
+            nav ul {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 75%;
+                max-width: 300px;
+                height: 100vh;
+                height: 100dvh;
+                background: rgba(16, 17, 17, 0.97);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 0;
+                padding: 2rem;
+                transition: right 0.4s ease;
+                border-left: 2px solid var(--light-gray);
+            }
+
+            nav ul.active {
+                right: 0;
+            }
+
+            nav ul li {
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid var(--light-gray);
+            }
+
+            nav ul li:last-child {
+                border-bottom: none;
+            }
+
+            nav a {
+                display: block;
+                font-size: 1.1rem;
+                letter-spacing: 0.12em;
+                padding: 1.25rem 1rem;
+                width: 100%;
+            }
+
+            nav a::after {
+                display: none;
+            }
+
+            nav a:active {
+                background: rgba(139, 61, 22, 0.3);
+            }
+
+            /* Page title */
+            h2 {
+                font-size: 2.2rem;
+                margin-bottom: 2rem;
+            }
+
+            h2::after {
+                width: 70px;
+                margin: 0.75rem auto;
+            }
+
+            /* Crew content area */
+            .crew-content {
+                padding: 7rem 1.25rem 4rem;
+            }
+
+            /* Crew member cards - stack vertically */
+            .crew-member,
+            .crew-member.reverse {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.5rem;
+                margin: 2rem auto;
+                gap: 1.25rem;
+            }
+
+            .crew-member img {
+                width: 65%;
+                max-width: 220px;
+                margin: 0 auto;
+            }
+
+            .crew-text h3 {
+                font-size: 1.15rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .crew-text p {
+                font-size: 1.1rem;
+                line-height: 1.6;
+                text-align: center;
+            }
+
+            /* Support button */
+            .support-link {
+                margin-top: 2.5rem;
+                margin-bottom: 3rem;
+            }
+
+            .support-link a {
+                font-size: 1.2rem;
+                padding: 0.5rem 1.2rem;
+            }
+        }
+
+        /* Mobile phones */
+        @media (max-width: 480px) {
+            nav {
+                padding: 0.85rem 1rem;
+            }
+
+            nav ul {
+                width: 85%;
+                max-width: none;
+            }
+
+            nav a {
+                font-size: 1.05rem;
+                padding: 1.1rem 1rem;
+            }
+
+            h2 {
+                font-size: 1.9rem;
+                letter-spacing: 0.08em;
+            }
+
+            .crew-content {
+                padding: 6rem 1rem 3rem;
+            }
+
+            .crew-member {
+                padding: 1.25rem;
+                margin: 1.5rem auto;
+                border-width: 1px;
+            }
+
+            .crew-member img {
+                width: 70%;
+                max-width: 200px;
+            }
+
+            .crew-text h3 {
+                font-size: 1.05rem;
+            }
+
+            .crew-text p {
+                font-size: 1rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .support-link {
+                margin-top: 2rem;
+                margin-bottom: 2.5rem;
+            }
+
+            .support-link a {
+                font-size: 1.1rem;
+                padding: 0.5rem 1rem;
+                border-width: 2px;
+            }
+        }
+
+        /* Very small screens */
+        @media (max-width: 360px) {
+            h2 {
+                font-size: 1.7rem;
+            }
+
+            .crew-content {
+                padding: 5.5rem 0.75rem 2.5rem;
+            }
+
+            .crew-member {
+                padding: 1rem;
+            }
+
+            .crew-member img {
+                width: 75%;
+            }
+
+            .crew-text h3 {
+                font-size: 1rem;
+            }
+
+            .crew-text p {
+                font-size: 0.95rem;
+            }
+
+            .support-link a {
+                font-size: 1rem;
+            }
+        }
+
+        /* Fix for background on mobile - disable fixed attachment which can cause issues */
+        @media (max-width: 768px) {
+            .crew {
+                background-attachment: scroll;
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1.5rem 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+
+
+        footer p {
+            font-family: "IM Fell English", serif;
+            font-size: 0.85rem;
+            color: var(--dark-blue);
+            letter-spacing: 0.05em;
+            opacity: 0.75;
+            margin: 0;
+        }
+
+        footer a {
+            color: var(--dark-blue);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid var(--dark-blue);
+        }
+
+        footer a:hover {
+            color: var(--dark-yellow, #8b3d16);
+            border-bottom-color: var(--dark-yellow, #8b3d16);
+        }
+
+
+
+        @media (max-width: 768px) {
+            footer {
+                padding: 2.5rem 1rem 1.5rem;
+            }
+
+            footer::before {
+                font-size: 0.8rem;
+            }
+
+            footer p {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            footer {
+                padding: 2rem 1rem 1.25rem;
+            }
+
+            footer p {
+                font-size: 0.75rem;
+            }
+        }
     </style>
 </head>
 
 <body>
     <div class="crew"></div>
     <nav>
+        <button class="menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <ul>
             <li><a href="index.html#home">Home</a></li>
             <li><a href="crew.html">The Crew</a></li>
@@ -431,7 +772,7 @@
             <li><a href="funding.html">Fundraising</a></li>
         </ul>
     </nav>
-
+    <div class="menu-overlay"></div>
     <div class="crew-content">
 
         <h2>The Crew</h2>
@@ -514,7 +855,34 @@
         <div class="support-link">
             <a href="funding.html" target="_blank">Support our film →</a>
         </div>
+        <footer>
+            <p>© 2025 Juliette Mangon | <a href="https://juliettemangon.com/" target="_blank">juliettemangon.com</a></p>
+        </footer>
 
+        <script>
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.querySelector('nav ul');
+            const menuOverlay = document.querySelector('.menu-overlay');
+
+            function toggleMenu() {
+                menuToggle.classList.toggle('active');
+                navMenu.classList.toggle('active');
+                menuOverlay.classList.toggle('active');
+                document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+            }
+
+            menuToggle.addEventListener('click', toggleMenu);
+            menuOverlay.addEventListener('click', toggleMenu);
+
+            // Close menu when a link is clicked
+            navMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navMenu.classList.contains('active')) {
+                        toggleMenu();
+                    }
+                });
+            });
+        </script>
 
 
 

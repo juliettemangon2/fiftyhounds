@@ -15,7 +15,7 @@
     <style>
         :root {
             --gray: #101111;
-            --light-gray: #5b6466;
+            --light-gray: #424b4d;
             --light-yellow: #f3eadd;
             --dark-yellow: #8b3d16;
             --accent: #c67137;
@@ -51,7 +51,6 @@
             backdrop-filter: blur(4px);
             z-index: 0;
         }
-
         nav {
             position: fixed;
             top: 0;
@@ -102,6 +101,52 @@
             width: 100%;
         }
 
+        /* Hamburger menu button - hidden on desktop */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 1001;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 28px;
+            height: 2px;
+            background: var(--light-yellow);
+            margin: 6px 0;
+            transition: all 0.3s ease;
+        }
+
+        /* Hamburger animation when open */
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* Overlay when menu is open */
+        .menu-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        .menu-overlay.active {
+            display: block;
+        }
+
+        /* ========== PAGE CONTENT ========== */
         section {
             position: relative;
             z-index: 1;
@@ -134,7 +179,6 @@
             color: var(--dark-yellow);
             font-family: "IM Fell English SC", serif;
         }
-
 
         h2::after {
             content: '';
@@ -197,7 +241,7 @@
 
         input[type="email"]:focus {
             background: rgba(255, 255, 255, 0.7);
-            border-color: var(----light-gray);
+            border-color: var(--light-gray);
         }
 
         button {
@@ -218,14 +262,12 @@
 
         /* Budget split image */
         .budget-split-img {
-            height: 90%;
-            max-width: 900px;
-
+            width: 100%;
+            max-width: 700px;
+            height: auto;
             display: block;
-            margin: 2rem auto 0;
-            border: 3px solid var(--light-gray);
+            margin: 2rem auto 3rem;
             background: rgba(33, 37, 40, 0.35);
-            margin-bottom: 3rem;
         }
 
         /* Incentives */
@@ -295,29 +337,6 @@
             margin-bottom: 0.35rem;
         }
 
-        @media (max-width: 900px) {
-            .incentives-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-
-
-
-
-
-
-        @media (max-width: 600px) {
-            form {
-                flex-direction: column;
-            }
-
-            input[type="email"],
-            button {
-                width: 100%;
-            }
-        }
-
         .support-link {
             text-align: center;
             margin-top: 4rem;
@@ -344,19 +363,372 @@
         }
 
         strong {
-
-            /* warm orange highlight */
             text-decoration: underline;
-            /* optional, adds contrast */
             letter-spacing: 0.02em;
             text-underline-offset: 3px;
             text-decoration-thickness: 2px;
         }
-    </style>
+
+        /* ========== RESPONSIVE - TABLET ========== */
+        @media (max-width: 1024px) {
+            nav ul {
+                gap: 1.5rem;
+            }
+
+            section {
+                padding: 7rem 1.5rem 4rem;
+            }
+
+            .content-box {
+                padding: 2.5rem;
+            }
+
+            .budget-split-img {
+                max-width: 600px;
+            }
+
+            .incentives-grid {
+                gap: 1.25rem;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .incentives-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========== RESPONSIVE - MOBILE ========== */
+        @media (max-width: 768px) {
+            body {
+                background-attachment: scroll;
+            }
+
+            body::before {
+                position: absolute;
+            }
+
+            /* NAV - This is the key fix */
+            nav {
+                padding: 1rem 1.5rem;
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 75%;
+                max-width: 300px;
+                height: 100vh;
+                height: 100dvh;
+                background: rgba(16, 17, 17, 0.97);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 0;
+                padding: 2rem;
+                border-left: 2px solid var(--light-gray);
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid var(--light-gray);
+            }
+
+            nav ul li:last-child {
+                border-bottom: none;
+            }
+
+            nav a {
+                display: block;
+                font-size: 1.1rem;
+                letter-spacing: 0.12em;
+                padding: 1.25rem 1rem;
+                width: 100%;
+            }
+
+            nav a::after {
+                display: none;
+            }
+
+            nav a:active {
+                background: rgba(139, 61, 22, 0.3);
+            }
+
+            /* Page content */
+            section {
+                padding: 6rem 1.25rem 3rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+                margin-bottom: 1.5rem;
+                letter-spacing: 0.08em;
+            }
+
+            h2::after {
+                width: 70px;
+                margin: 0.75rem auto;
+            }
+
+            h3 {
+                font-size: 1.5rem;
+            }
+
+            .content-box {
+                padding: 1.5rem;
+                border-width: 2px;
+            }
+
+            .content-box p {
+                font-size: 1.15rem;
+                text-align: left;
+            }
+
+            .budget-split-img {
+                max-width: 100%;
+                border-width: 2px;
+                margin: 1.5rem auto 2rem;
+            }
+
+            .content-box h3[style*="font-size:1.6rem"] {
+                font-size: 1.4rem !important;
+            }
+
+            .content-box p[style*="font-size:1.1rem"] {
+                font-size: 1rem !important;
+            }
+
+            .incentives-grid {
+                gap: 1rem;
+            }
+
+            .incentive-card {
+                padding: 1.25rem;
+                border-width: 2px;
+            }
+
+            .incentive-card .amount {
+                font-size: 1.2rem;
+            }
+
+            .incentive-card .label {
+                font-size: 0.9rem;
+            }
+
+            .incentive-card p {
+                font-size: 1.1rem !important;
+            }
+
+            .incentive-card .includes-title {
+                font-size: 1.05rem;
+            }
+
+            .incentive-card li {
+                font-size: 1.05rem;
+            }
+
+            .email-box {
+                margin-top: 2rem;
+            }
+
+            .email-box p {
+                font-size: 1.15rem;
+            }
+
+            p[style*="font-size:1.6rem"] {
+                font-size: 1.25rem !important;
+            }
+
+            h2[style*="margin-top:4rem"],
+            h2[style*="margin-top:5rem"] {
+                margin-top: 2.5rem !important;
+            }
+        }
+
+
+
+        @media (max-width: 480px) {
+            nav {
+                padding: 0.85rem 1rem;
+                flex-direction: row-reverse;
+            }
+
+            nav ul {
+                width: 85%;
+                max-width: none;
+            }
+
+            nav a {
+                font-size: 1.05rem;
+                padding: 1.1rem 1rem;
+            }
+
+            section {
+                padding: 5.5rem 1rem 2.5rem;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            h3 {
+                font-size: 1.35rem;
+            }
+
+            .content-box {
+                padding: 1.25rem;
+            }
+
+            .content-box p {
+                font-size: 1.05rem;
+                margin-bottom: 1.25rem;
+            }
+
+            p[style*="font-size:1.6rem"] {
+                font-size: 1.1rem !important;
+            }
+
+            .content-box h3[style*="font-size:1.6rem"] {
+                font-size: 1.25rem !important;
+            }
+
+            h2[style*="font-size:2.2rem"] {
+                font-size: 1.5rem !important;
+            }
+
+            .incentive-card {
+                padding: 1rem;
+            }
+
+            .incentive-card .tier {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.25rem;
+            }
+
+            .incentive-card .amount {
+                font-size: 1.15rem;
+            }
+
+            .incentive-card p {
+                font-size: 1rem !important;
+            }
+
+            .incentive-card li {
+                font-size: 1rem;
+            }
+
+            .email-box p {
+                font-size: 1.05rem;
+            }
+
+            input[type="email"],
+            button {
+                font-size: 0.95rem;
+                padding: 0.7rem 1rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            section {
+                padding: 5rem 0.75rem 2rem;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+            }
+
+            .content-box {
+                padding: 1rem;
+            }
+
+            .incentive-card {
+                padding: 0.85rem;
+            }
+
+            .incentive-card .amount {
+                font-size: 1.1rem;
+            }
+        }
+          footer {
+            text-align: center;
+            padding: 3rem 1.5rem 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+
+
+        footer p {
+            font-family: "IM Fell English", serif;
+            font-size: 0.85rem;
+            color: var(--light-yellow, #d1c5b5);
+            letter-spacing: 0.05em;
+            opacity: 0.75;
+            margin: 0;
+        }
+
+        footer a {
+            color: var(--light-yellow, #d1c5b5);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid var(--light-yellow);
+        }
+
+        footer a:hover {
+            color: var(--dark-yellow, #8b3d16);
+            border-bottom-color: var(--dark-yellow, #8b3d16);
+        }
+
+
+
+        @media (max-width: 768px) {
+            footer {
+                padding: 2.5rem 1rem 1.5rem;
+            }
+
+            footer::before {
+                font-size: 0.8rem;
+            }
+
+            footer p {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            footer {
+                padding: 2rem 1rem 1.25rem;
+            }
+
+            footer p {
+                font-size: 0.75rem;
+            }
+        }
+\    </style>
 </head>
 
 <body>
     <nav>
+        <button class="menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <ul>
             <li><a href="index.html#home">Home</a></li>
             <li><a href="crew.html">The Crew</a></li>
@@ -365,7 +737,7 @@
             <li><a href="funding.html">Fundraising</a></li>
         </ul>
     </nav>
-
+    <div class="menu-overlay"></div>
     <section>
         <h2>Fundraising</h2>
         <div class="content-box">
@@ -388,7 +760,7 @@
         </div>
 
         <div class="content-box" style=" padding-bottom: 1rem; margin-top:4rem;">
-            <h2>SEED&SPARK LINK </h2>
+            <h2>SEED&SPARK LINK Coming soon!</h2>
             <h2>Pledge</h2>
             <p style="font-size:1.6rem; text-align:center">Your donation will help bring this film to life, supporting
                 both our shoot and post-production efforts.
@@ -423,39 +795,47 @@
                 narrative films, short proof-of-concepts, and feature films.</p>
 
         </div>
-        
+
         <h2 style="margin-top:4rem;">Budget Breakdown</h2>
-                <img class="budget-split-img" src="budgetsplit.jpeg" alt="Budget split breakdown" />
+        <img class="budget-split-img" src="budgetsplit.jpeg" alt="Budget split breakdown" />
 
         <div class="content-box">
             <h3 style="font-size:1.6rem;">Camera</h3>
-            <p style="font-size:1.1rem;">Covers the rental and maintenance of our shooting camera, lenses, and essential accessories needed to
+            <p style="font-size:1.1rem;">Covers the rental and maintenance of our shooting camera, lenses, and essential
+                accessories needed to
                 achieve the visual language of the film. This ensures high-quality image capture that supports the
                 project’s aesthetic and technical goals.
             </p>
             <h3 style="font-size:1.6rem;">Crew</h3>
-            <p style="font-size:1.1rem;">Allocates funds for key production personnel, including the director of photography, sound mixer, and
+            <p style="font-size:1.1rem;">Allocates funds for key production personnel, including the director of
+                photography, sound mixer, and
                 more. Compensating crew fairly supports a professional working environment and ensures efficiency on
                 set.</p>
             <h3 style="font-size:1.6rem;">Art Department</h3>
-            <p style="font-size:1.1rem;">Supports production design needs such as set dressing, props, and visual details that establish the
+            <p style="font-size:1.1rem;">Supports production design needs such as set dressing, props, and visual
+                details that establish the
                 film’s world. These elements are essential for conveying tone, character, and narrative
                 authenticity—especially in a period piece.</p>
             <h3 style="font-size:1.6rem;">Equipment</h3>
-            <p style="font-size:1.1rem;">Includes lighting, sound, and other rentals required for a safe and effective production. Proper
+            <p style="font-size:1.1rem;">Includes lighting, sound, and other rentals required for a safe and effective
+                production. Proper
                 equipment allows the crew to work efficiently while maintaining consistent visual and audio quality.
             </p>
             <h3 style="font-size:1.6rem;">Post Production</h3>
-            <p style="font-size:1.1rem;">Covers editing, sound design, color correction, and final mastering. This stage shapes the raw footage
+            <p style="font-size:1.1rem;">Covers editing, sound design, color correction, and final mastering. This stage
+                shapes the raw footage
                 into a cohesive finished film and is critical to the project’s overall impact.</p>
             <h3 style="font-size:1.6rem;">Cast</h3>
-           <p style="font-size:1.1rem;">Provides compensation for actors and performers. Funding cast ensures committed performances and allows
+            <p style="font-size:1.1rem;">Provides compensation for actors and performers. Funding cast ensures committed
+                performances and allows
                 the production to work with talent who can bring depth and credibility to the story.</p>
             <h3 style="font-size:1.6rem;">Food/Transport</h3>
-            <p style="font-size:1.1rem;">Accounts for meals, craft services, and transportation for cast and crew during production. These
+            <p style="font-size:1.1rem;">Accounts for meals, craft services, and transportation for cast and crew during
+                production. These
                 essentials maintain morale, energy, and punctuality on set.</p>
             <h3 style="font-size:1.6rem;">Contingency</h3>
-            <p style="font-size:1.1rem;">Reserved for unexpected expenses or production challenges. This buffer helps keep the project on schedule
+            <p style="font-size:1.1rem;">Reserved for unexpected expenses or production challenges. This buffer helps
+                keep the project on schedule
                 and prevents unforeseen costs from disrupting completion.</p>
 
 
@@ -464,12 +844,13 @@
         <h2 style="margin-top:5rem;">Incentives</h2>
         <div class="content-box">
             <div class="incentives-grid">
-                 <div class="incentive-card">
+                <div class="incentive-card">
                     <div class="tier">
                         <div class="amount">$25</div>
                         <div class="label">Thank you note</div>
                     </div>
-                    <p style="font-size: 1.3rem;">Donate and get a thank you note directly from our team—please include your email to receive the note.</p>
+                    <p style="font-size: 1.3rem;">Donate and get a thank you note directly from our team—please include
+                        your email to receive the note.</p>
                 </div>
 
                 <div class="incentive-card">
@@ -477,7 +858,8 @@
                         <div class="amount">$50</div>
                         <div class="label">A special thank you</div>
                     </div>
-                    <p style="font-size: 1.3rem;">See your name listed on the fundraising page of our film’s website to acknowledge you as a
+                    <p style="font-size: 1.3rem;">See your name listed on the fundraising page of our film’s website to
+                        acknowledge you as a
                         special supporter and thank you for your support on the project.</p>
                 </div>
 
@@ -595,9 +977,37 @@
             </form>
         </div>
     </section>
+     <footer>
+    <p>© 2025 Juliette Mangon | <a href="https://juliettemangon.com/" target="_blank">juliettemangon.com</a></p>
+</footer>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('nav ul');
+        const menuOverlay = document.querySelector('.menu-overlay');
+
+        function toggleMenu() {
+            menuToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+        }
+
+        menuToggle.addEventListener('click', toggleMenu);
+        menuOverlay.addEventListener('click', toggleMenu);
+
+        // Close menu when a link is clicked
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navMenu.classList.contains('active')) {
+                    toggleMenu();
+                }
+            });
+        });
+    </script>
 
 
 </body>
+
 
 </html>
 
