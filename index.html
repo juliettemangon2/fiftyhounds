@@ -628,6 +628,21 @@
                 font-size: 0.75rem;
             }
         }
+
+        @media (max-width: 768px) {
+            body {
+                background-attachment: scroll;
+                background-size: cover;
+                background-position: center top;
+            }
+        }
+
+        /* iOS Safari specific fix */
+        @supports (-webkit-touch-callout: none) {
+            body {
+                background-attachment: scroll !important;
+            }
+        }
     </style>
 </head>
 
@@ -720,9 +735,9 @@
     </div>
 
 
- <footer>
-    <p>© 2025 Juliette Mangon | <a href="https://juliettemangon.com/" target="_blank">juliettemangon.com</a></p>
-</footer>
+    <footer>
+        <p>© 2025 Juliette Mangon | <a href="https://juliettemangon.com/" target="_blank">juliettemangon.com</a></p>
+    </footer>
     <script>
         const menuToggle = document.querySelector('.menu-toggle');
         const navMenu = document.querySelector('nav ul');

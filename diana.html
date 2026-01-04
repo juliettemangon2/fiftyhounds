@@ -164,7 +164,7 @@
       color: var(--light-yellow);
     }
 
-   
+
 
     @media (max-width: 768px) {
       section {
@@ -195,85 +195,87 @@
       background: var(--light-yellow);
       color: var(--dark-orange);
     }
+
     .menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-    z-index: 1001;
-}
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      z-index: 1001;
+    }
 
-.menu-toggle span {
-    display: block;
-    width: 28px;
-    height: 2px;
-    background: var(--light-yellow);
-    margin: 6px 0;
-    transition: all 0.3s ease;
-}
+    .menu-toggle span {
+      display: block;
+      width: 28px;
+      height: 2px;
+      background: var(--light-yellow);
+      margin: 6px 0;
+      transition: all 0.3s ease;
+    }
 
-/* Hamburger animation when open */
-.menu-toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translate(6px, 6px);
-}
+    /* Hamburger animation when open */
+    .menu-toggle.active span:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
 
-.menu-toggle.active span:nth-child(2) {
-    opacity: 0;
-}
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
 
-.menu-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
-}
+    .menu-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
 
-/* Overlay when menu is open */
-.menu-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-}
+    /* Overlay when menu is open */
+    .menu-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
 
-.menu-overlay.active {
-    display: block;
-}
+    .menu-overlay.active {
+      display: block;
+    }
 
-/* Tablet breakpoint */
-@media (max-width: 1024px) {
-    nav ul {
+    /* Tablet breakpoint */
+    @media (max-width: 1024px) {
+      nav ul {
         gap: 1.5rem;
-    }
-    
-    section {
-        padding: 7rem 1.5rem 4rem;
-    }
-    
-    .myth {
-        padding: 2rem;
-    }
-}
+      }
 
-/* Mobile breakpoint - hamburger menu activates */
-@media (max-width: 768px) {
-    /* Background fix for mobile */
-    body {
-        background-attachment: scroll;
+      section {
+        padding: 7rem 1.5rem 4rem;
+      }
+
+      .myth {
+        padding: 2rem;
+      }
     }
-    
-    nav {
+
+    /* Mobile breakpoint - hamburger menu activates */
+    @media (max-width: 768px) {
+
+      /* Background fix for mobile */
+      body {
+        background-attachment: scroll;
+      }
+
+      nav {
         padding: 1rem 1.5rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
-    }
-    
-    .menu-toggle {
+      }
+
+      .menu-toggle {
         display: block;
         margin-left: auto;
-    }
-    
-    nav ul {
+      }
+
+      nav ul {
         position: fixed;
         top: 0;
         right: -100%;
@@ -289,239 +291,254 @@
         padding: 2rem;
         transition: right 0.4s ease;
         border-left: 2px solid var(--light-gray);
-    }
-    
-    nav ul.active {
+      }
+
+      nav ul.active {
         right: 0;
-    }
-    
-    nav ul li {
+      }
+
+      nav ul li {
         width: 100%;
         text-align: center;
         border-bottom: 1px solid var(--light-gray);
-    }
-    
-    nav ul li:last-child {
+      }
+
+      nav ul li:last-child {
         border-bottom: none;
-    }
-    
-    nav a {
+      }
+
+      nav a {
         display: block;
         font-size: 1.1rem;
         letter-spacing: 0.12em;
         padding: 1.25rem 1rem;
         width: 100%;
-    }
-    
-    nav a::after {
+      }
+
+      nav a::after {
         display: none;
-    }
-    
-    nav a:active {
+      }
+
+      nav a:active {
         background: rgba(139, 61, 22, 0.3);
-    }
-    
-    /* Page content */
-    section {
+      }
+
+      /* Page content */
+      section {
         padding: 6rem 1.25rem 3rem;
-    }
-    
-    h2 {
+      }
+
+      h2 {
         margin-bottom: 2rem;
         letter-spacing: 0.1em;
-    }
-    
-    /* Myth cards */
-    .myth {
+      }
+
+      /* Myth cards */
+      .myth {
         padding: 1.5rem;
         margin-bottom: 2.5rem;
         gap: 1.25rem;
-    }
-    
-    .myth-text h3 {
+      }
+
+      .myth-text h3 {
         font-size: 1.5rem;
         letter-spacing: 0.06em;
-    }
-    
-    .myth-text h1 {
+      }
+
+      .myth-text h1 {
         font-size: 1.1rem;
-    }
-    
-    .myth-text p {
+      }
+
+      .myth-text p {
         font-size: 1.05rem;
         line-height: 1.65;
-    }
-    
-    .source p {
+      }
+
+      .source p {
         font-size: 0.95rem;
-    }
-    
-    /* Support button */
-    .support-link {
+      }
+
+      /* Support button */
+      .support-link {
         margin-bottom: 1.5rem;
-    }
-    
-    .support-link a {
+      }
+
+      .support-link a {
         font-size: 1.2rem;
         padding: 0.5rem 1.2rem;
-    }
-    
-   
-}
+      }
 
-/* Mobile phones */
-@media (max-width: 480px) {
-    nav {
-        padding: 0.85rem 1rem;
+
     }
-    
-    nav ul {
+
+    /* Mobile phones */
+    @media (max-width: 480px) {
+      nav {
+        padding: 0.85rem 1rem;
+      }
+
+      nav ul {
         width: 85%;
         max-width: none;
-    }
-    
-    nav a {
+      }
+
+      nav a {
         font-size: 1.05rem;
         padding: 1.1rem 1rem;
-    }
-    
-    section {
+      }
+
+      section {
         padding: 5.5rem 1rem 2.5rem;
-    }
-    
-    h2 {
+      }
+
+      h2 {
         margin-bottom: 1.75rem;
-    }
-    
-    .myth {
+      }
+
+      .myth {
         padding: 1.25rem;
         margin-bottom: 2rem;
-    }
-    
-    .myth-text h3 {
+      }
+
+      .myth-text h3 {
         font-size: 1.35rem;
-    }
-    
-    .myth-text h1 {
+      }
+
+      .myth-text h1 {
         font-size: 1rem;
         margin-bottom: 0.6rem;
-    }
-    
-    .myth-text p {
+      }
+
+      .myth-text p {
         font-size: 1rem;
         margin-bottom: 0.85rem;
-    }
-    
-    .source p {
+      }
+
+      .source p {
         font-size: 0.9rem;
-    }
-    
-    .support-link a {
+      }
+
+      .support-link a {
         font-size: 1.1rem;
         padding: 0.5rem 1rem;
         border-width: 2px;
-    }
-    
-    
-}
+      }
 
-/* Very small screens */
-@media (max-width: 360px) {
-    section {
+
+    }
+
+    /* Very small screens */
+    @media (max-width: 360px) {
+      section {
         padding: 5rem 0.75rem 2rem;
-    }
-    
-    .myth {
+      }
+
+      .myth {
         padding: 1rem;
-    }
-    
-    .myth-text h3 {
+      }
+
+      .myth-text h3 {
         font-size: 1.25rem;
-    }
-    
-    .myth-text p {
+      }
+
+      .myth-text p {
         font-size: 0.95rem;
-    }
-    
-    .support-link a {
+      }
+
+      .support-link a {
         font-size: 1rem;
+      }
     }
-}
-  footer {
-            text-align: center;
-            padding: 3rem 1.5rem 2rem;
-            position: relative;
-            z-index: 1;
-        }
+
+    footer {
+      text-align: center;
+      padding: 3rem 1.5rem 2rem;
+      position: relative;
+      z-index: 1;
+    }
 
 
 
-        footer p {
-            font-family: "IM Fell English", serif;
-            font-size: 0.85rem;
-            color: var(--light-yellow, #d1c5b5);
-            letter-spacing: 0.05em;
-            opacity: 0.75;
-            margin: 0;
-        }
+    footer p {
+      font-family: "IM Fell English", serif;
+      font-size: 0.85rem;
+      color: var(--light-yellow, #d1c5b5);
+      letter-spacing: 0.05em;
+      opacity: 0.75;
+      margin: 0;
+    }
 
-        footer a {
-            color: var(--light-yellow, #d1c5b5);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border-bottom: 1px solid var(--light-yellow);
-        }
+    footer a {
+      color: var(--light-yellow, #d1c5b5);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border-bottom: 1px solid var(--light-yellow);
+    }
 
-        footer a:hover {
-            color: var(--dark-yellow, #8b3d16);
-            border-bottom-color: var(--dark-yellow, #8b3d16);
-        }
+    footer a:hover {
+      color: var(--dark-yellow, #8b3d16);
+      border-bottom-color: var(--dark-yellow, #8b3d16);
+    }
 
 
 
-        @media (max-width: 768px) {
-            footer {
-                padding: 2.5rem 1rem 1.5rem;
-            }
+    @media (max-width: 768px) {
+      footer {
+        padding: 2.5rem 1rem 1.5rem;
+      }
 
-            footer::before {
-                font-size: 0.8rem;
-            }
+      footer::before {
+        font-size: 0.8rem;
+      }
 
-            footer p {
-                font-size: 0.8rem;
-            }
-        }
+      footer p {
+        font-size: 0.8rem;
+      }
+    }
 
-        @media (max-width: 480px) {
-            footer {
-                padding: 2rem 1rem 1.25rem;
-            }
+    @media (max-width: 480px) {
+      footer {
+        padding: 2rem 1rem 1.25rem;
+      }
 
-            footer p {
-                font-size: 0.75rem;
-            }
-        }
+      footer p {
+        font-size: 0.75rem;
+      }
+    }
 
+    @media (max-width: 768px) {
+      body {
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: center top;
+      }
+    }
+
+    /* iOS Safari specific fix */
+    @supports (-webkit-touch-callout: none) {
+      body {
+        background-attachment: scroll !important;
+      }
+    }
   </style>
 </head>
 
 <body>
   <nav>
-       <button class="menu-toggle" aria-label="Toggle menu">
-           <span></span>
-           <span></span>
-           <span></span>
-       </button>
-       <ul>
-           <li><a href="index.html#home">Home</a></li>
-           <li><a href="crew.html">The Crew</a></li>
-           <li><a href="diana.html">Diana</a></li>
-           <li><a href="lookbook.html">Look Book</a></li>
-           <li><a href="funding.html">Fundraising</a></li>
-       </ul>
-   </nav>
-   <div class="menu-overlay"></div>
+    <button class="menu-toggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul>
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="crew.html">The Crew</a></li>
+      <li><a href="diana.html">Diana</a></li>
+      <li><a href="lookbook.html">Look Book</a></li>
+      <li><a href="funding.html">Fundraising</a></li>
+    </ul>
+  </nav>
+  <div class="menu-overlay"></div>
 
   <section>
     <h2>Diana</h2>
@@ -535,7 +552,7 @@
         </p>
         <p>Figures such as Gaia and Hannahanna remind us that feminine power was once foundational to humanity's
           understandings of creation, authority, and the natural world.</p>
-          <p>These figures include the Roman goddess Diana, who stems from the Greek deity Artemis.</p>
+        <p>These figures include the Roman goddess Diana, who stems from the Greek deity Artemis.</p>
         <p>Inspired by the myths detailed below surrounding Artemis—a goddess defined by her demand for
           independence—<em>Fifty Hounds</em> explores what has been lost in the modern understanding of female power.
         </p>
@@ -574,33 +591,33 @@
   </div>
 
 
- <footer>
+  <footer>
     <p>© 2025 Juliette Mangon | <a href="https://juliettemangon.com/" target="_blank">juliettemangon.com</a></p>
-</footer>
+  </footer>
   <script>
-       const menuToggle = document.querySelector('.menu-toggle');
-       const navMenu = document.querySelector('nav ul');
-       const menuOverlay = document.querySelector('.menu-overlay');
-       
-       function toggleMenu() {
-           menuToggle.classList.toggle('active');
-           navMenu.classList.toggle('active');
-           menuOverlay.classList.toggle('active');
-           document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
-       }
-       
-       menuToggle.addEventListener('click', toggleMenu);
-       menuOverlay.addEventListener('click', toggleMenu);
-       
-       // Close menu when a link is clicked
-       navMenu.querySelectorAll('a').forEach(link => {
-           link.addEventListener('click', () => {
-               if (navMenu.classList.contains('active')) {
-                   toggleMenu();
-               }
-           });
-       });
-   </script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('nav ul');
+    const menuOverlay = document.querySelector('.menu-overlay');
+
+    function toggleMenu() {
+      menuToggle.classList.toggle('active');
+      navMenu.classList.toggle('active');
+      menuOverlay.classList.toggle('active');
+      document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+    }
+
+    menuToggle.addEventListener('click', toggleMenu);
+    menuOverlay.addEventListener('click', toggleMenu);
+
+    // Close menu when a link is clicked
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (navMenu.classList.contains('active')) {
+          toggleMenu();
+        }
+      });
+    });
+  </script>
 
 </body>
 
