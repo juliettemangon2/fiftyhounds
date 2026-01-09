@@ -356,6 +356,7 @@
             /* sits behind all content */
         }
 
+
         .crew-content {
             position: relative;
             z-index: 1;
@@ -404,6 +405,109 @@
             font-size: 1.25rem;
             margin-bottom: 1rem;
         }
+
+
+
+        .additional-crew h3 {
+            font-family: "IM Fell English SC", serif;
+            font-size: 1.6rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            text-align: center;
+            color: var(--light-yellow);
+            margin-bottom: 1.75rem;
+            padding-top: 0rem;
+            margin-top: 0rem;
+        }
+
+
+        .additional-crew-grid {
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            /* Changed from minmax(0, 1fr) to auto */
+            justify-content: center;
+            /* Centers the columns */
+            gap: 1rem 1rem;
+            /* Increased horizontal gap for visual separation */
+        }
+
+        .ac-item {
+            padding: 10rem;
+            border: 1px solid rgba(209, 197, 181, 0.14);
+            background: rgba(30, 33, 36, 0.35);
+            /* Makes items only as wide as their content */
+            min-width: 180px;
+            /* Ensures minimum readable width */
+        }
+
+        /* Mobile - REPLACE your existing mobile styles for additional-crew */
+        @media (max-width: 768px) {
+            .additional-crew {
+                max-width: 90%;
+                padding: 1.75rem 1.25rem;
+                margin: 2.75rem auto 2rem;
+            }
+
+            .additional-crew-grid {
+                grid-template-columns: 1fr;
+                justify-content: stretch;
+            }
+
+            .ac-item {
+                width: 100%;
+                text-align: center;
+            }
+
+            .ac-link {
+                justify-content: center;
+            }
+        }
+
+
+        .ac-name {
+            font-family: "IM Fell English SC", serif;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--light-yellow);
+            font-size: 1.05rem;
+            margin-bottom: 0rem;
+        }
+
+        .ac-role {
+            font-size: 1.05rem;
+            color: var(--light-yellow);
+        }
+
+
+
+        .ac-link {
+            display: inline-block;
+            margin-top: 0rem;
+            font-family: "IM Fell English SC", serif;
+            font-size: 1.1rem;
+            letter-spacing: 0.05em;
+            color: var(--light-yellow);
+            text-decoration: none;
+            border-bottom: 1px solid var(--dark-yellow);
+            padding-bottom: 2px;
+            transition: all 0.3s ease;
+            text-transform: none;
+            transition: all 0.3s ease;
+
+        }
+
+
+
+        .ac-link:hover {
+            color: var(--bright-orange);
+            border-bottom-color: var(--bright-orange);
+            transform: translateX(6px);
+
+        }
+
+
+
+
 
         @media (max-width: 768px) {
             .crew-member {
@@ -728,6 +832,16 @@
             border-bottom-color: var(--dark-yellow, #8b3d16);
         }
 
+        footer p {
+            background: var(--light-yellow);
+            display: inline;
+            padding: 0.2rem 0.5rem;
+        }
+
+        footer {
+            text-align: center;
+        }
+
 
 
         @media (max-width: 768px) {
@@ -768,6 +882,64 @@
                 background-attachment: scroll !important;
             }
         }
+
+        .additional-crew {
+            max-width: 850px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background: rgba(16, 17, 17, 0.78);
+            border: 2px solid rgba(209, 197, 181, 0.18);
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.35);
+        }
+
+        /* Add this to override the conflicting styles - put at the END of your <style> section */
+
+        .additional-crew {
+            max-width: 850px !important;
+            /* Force the narrower width */
+        }
+
+        .additional-crew-grid {
+            grid-template-columns: repeat(2, 1fr);
+            /* Keep equal columns */
+            max-width: 100%;
+        }
+
+        .ac-item {
+            padding: 1rem 1.25rem;
+            /* Remove any width constraints so they size naturally within the grid */
+        }
+
+        .additional-crew h3 {
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+        }
+
+        .additional-crew h3#additional-crew-title {
+            margin-top: 0;
+            padding-top: 0;
+        }
+
+        .crew-link {
+            display: inline-block;
+            margin-top: 0.75rem;
+            font-family: "IM Fell English SC", serif;
+            font-size: 1.1rem;
+            letter-spacing: 0.05em;
+            color: var(--light-yellow);
+            text-decoration: none;
+            border-bottom: 1px solid var(--dark-yellow);
+            padding-bottom: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .crew-link:hover {
+            color: var(--bright-orange);
+            border-bottom-color: var(--bright-orange);
+            transform: translateX(6px);
+
+
+        }
     </style>
 </head>
 
@@ -799,11 +971,12 @@
                 <p>International filmmaker, Halle Skye, is a creator of narrative and historical dramas that depict
                     themes of nostalgia and death.</p>
                 <p>In May 2024 she graduated NYU Tisch School of the Arts with a BFA in Film & TV.
-
                 </p>
                 <p>Her British shorts, MARE and BILLY'S BIRDS, will be circulating the global festival circuit in 2026.
-
                 </p>
+                <a class="crew-link" href="https://halleskye.com" target="_blank"
+                    rel="noopener noreferrer">halleskye.com →</a>
+
             </div>
         </div>
 
@@ -816,6 +989,8 @@
                     recognized work includes “Robster”, “The Chlorine Bible”, and “Partus”.</p>
                 <p>She is also the 2024 recipient of the ARRI Volker Bahnnemann Award for achievement in cinematography.
                 </p>
+                <a class="crew-link" href="https://www.alexandramettler.com" target="_blank"
+                    rel="noopener noreferrer">alexandramettler.com →</a>
             </div>
         </div>
 
@@ -830,6 +1005,8 @@
                 <p>She has produced and directed award winning films including “Can’t You See I’m Trying” “Holy Water”
                     “Peach Fuzz” and “Everything I Never Told You” and is currently the lead producer of the world
                     premiere of Clifford Odets’ “The Nursery”.</p>
+                <a class="crew-link" href="https://www.carleylovito.com" target="_blank"
+                    rel="noopener noreferrer">carleylovito.com →</a>
             </div>
         </div>
 
@@ -846,6 +1023,9 @@
                 <p>Her time at Tisch has taught her the
                     value in creating one's own opportunities, leading her to co-create “Fifty Hounds” which she is both
                     producing and acting in.</p>
+                <a class="crew-link" href="https://www.miraforresteryoung.com" target="_blank"
+                    rel="noopener noreferrer">miraforresteryoung.com →</a>
+
             </div>
         </div>
 
@@ -853,54 +1033,136 @@
             <img src="headshots/ralph.jpeg" alt="Ralph Calle headshot">
             <div class="crew-text">
                 <h3>Ralph C. Schulz (Producer)</h3>
+
                 <p>Ralph C. Schulz is a Swiss-Peruvian-American film producer, director, actor, and distributor. His
                     award-winning debut film screened in New York, Los Angeles, and Milan and was distributed by Swiss
                     Films. He is the co-founder and CEO of RISE FLIX, a platform connecting emerging filmmakers with
                     industry professionals. Ralph has helped creators secure representation, land production deals, and
-                    option feature scripts.
-                </p>
+                    option feature scripts.</p>
                 <p>He is the distributor of the Midwestern Emmy-winning short "Room Tone" and various other shorts
                     Academy Award-shortlisted. His credits include HBO’s "And Just Like That" and "The Chair Company",
                     and a documentary produced by three-time Academy Award winner Mark Harris.</p>
             </div>
         </div>
 
+        <!-- ADDITIONAL CREW -->
+        <section style="margin-top: 0rem; padding-top:2rem;" class="additional-crew"
+            aria-labelledby="additional-crew-title">
+            <h3 id="additional-crew-title">Additional Crew</h3>
+
+            <div class="additional-crew-grid">
+                <div class="ac-item">
+                    <div class="ac-name">ISABELLA FRIEDRICH</div>
+                    <div class="ac-role">Assistant Director</div>
+                    <a class="ac-link" href="https://www.isabellafriedrich.com/" target="_blank"
+                        rel="noopener noreferrer">
+                        isabellafriedrich.com →
+                    </a>
+                </div>
+
+                <div class="ac-item">
+                    <div class="ac-name">JACOB ESCHBORNE</div>
+                    <div class="ac-role">1st Assistant Camera</div>
+                </div>
+
+                <div class="ac-item">
+                    <div class="ac-name">DAVID AUGUSTO</div>
+                    <div class="ac-role">2nd Assistant Camera</div>
+                </div>
+
+                <div class="ac-item">
+                    <div class="ac-name">JENNIFER MASON</div>
+                    <div class="ac-role">Camera PA</div>
+                </div>
+
+                <div class="ac-item">
+                    <div class="ac-name">JACKSON YEOMANS</div>
+                    <div class="ac-role">Gaffer</div>
+                    <a class="ac-link" href="https://www.imdb.com/name/nm10904604/" target="_blank"
+                        rel="noopener noreferrer">
+                        IMDb profile →
+                    </a>
+                </div>
+
+                <div class="ac-item">
+                    <div class="ac-name">KAYLIN SKYE</div>
+                    <div class="ac-role">Script Supervisor</div>
+                    <a class="ac-link" href="https://www.kaylinskyemirel.com/" target="_blank"
+                        rel="noopener noreferrer">
+                        kaylinskyemirel.com →
+                    </a>
+                </div>
+
+                <div class="ac-item">
+                    <div class="ac-name">KATIE ADAMS</div>
+                    <div class="ac-role">Production Designer</div>
+                    <a class="ac-link" href="https://katieadams.myportfolio.com/welcome" target="_blank"
+                        rel="noopener noreferrer">
+                        katieadams.myportfolio.com →
+                    </a>
+                </div>
+
+                <div class="ac-item">
+                    <div class="ac-name">FLORA NOLAN</div>
+                    <div class="ac-role">Costume Designer</div>
+                </div>
+
+                <div class="ac-item">
+                    <div class="ac-name">GRACE NEWMAN</div>
+                    <div class="ac-role">SFX &amp; HMU</div>
+                    <a class="ac-link" href="https://www.gracenewmanspfx.com" target="_blank" rel="noopener noreferrer">
+                        gracenewmanspfx.com →
+                    </a>
+                </div>
+
+                <div class="ac-item">
+                    <div class="ac-name">IONA GORDON</div>
+                    <div class="ac-role">Casting Director</div>
+                </div>
+
+                <div class="ac-item">
+                    <div class="ac-name">LANA SPOTA</div>
+                    <div class="ac-role">Arts Assistant</div>
+                </div>
+
+                <div class="ac-item">
+                    <div class="ac-name">SARAH PARSONS</div>
+                    <div class="ac-role">Production Assistant</div>
+                </div>
+            </div>
         </section>
 
         <div class="support-link">
             <a href="funding.html" target="_blank">Support our film →</a>
         </div>
+
         <footer>
             <p>© 2025 Juliette Mangon | <a href="https://juliettemangon.com/" target="_blank">juliettemangon.com</a></p>
         </footer>
 
-        <script>
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navMenu = document.querySelector('nav ul');
-            const menuOverlay = document.querySelector('.menu-overlay');
+    </div> <!-- CLOSE .crew-content -->
 
-            function toggleMenu() {
-                menuToggle.classList.toggle('active');
-                navMenu.classList.toggle('active');
-                menuOverlay.classList.toggle('active');
-                document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
-            }
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('nav ul');
+        const menuOverlay = document.querySelector('.menu-overlay');
 
-            menuToggle.addEventListener('click', toggleMenu);
-            menuOverlay.addEventListener('click', toggleMenu);
+        function toggleMenu() {
+            menuToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+        }
 
-            // Close menu when a link is clicked
-            navMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    if (navMenu.classList.contains('active')) {
-                        toggleMenu();
-                    }
-                });
+        menuToggle.addEventListener('click', toggleMenu);
+        menuOverlay.addEventListener('click', toggleMenu);
+
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navMenu.classList.contains('active')) toggleMenu();
             });
-        </script>
-
-
-
+        });
+    </script>
 
 </body>
 
