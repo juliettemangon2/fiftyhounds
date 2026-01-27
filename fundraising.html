@@ -18,10 +18,11 @@
             --light-gray: #424b4d;
             --light-yellow: #f3eadd;
             --dark-yellow: #8b3d16;
-            --accent: #c67137;
-            --navy: #000000;
+            --accent: #c05813;
+            --navy: #d69017;
             --light-blue: #9eaab5;
-            --light-blue2: rgb(128, 155, 181)5;
+            --light-blue2: rgb(128, 155, 181);
+
 
         }
 
@@ -180,7 +181,7 @@
             text-transform: uppercase;
             letter-spacing: 0.1em;
             margin-bottom: 0rem;
-            color: var(--dark-yellow);
+            color: var(--accent);
             font-family: "IM Fell English SC", serif;
         }
 
@@ -343,15 +344,16 @@
 
         .support-link {
             text-align: center;
-            margin-top: 4rem;
+            margin-top: 0rem;
             margin-bottom: 2rem;
         }
 
         .support-link a {
             display: inline-block;
             font-family: "IM Fell English SC", serif;
-            color: var(--dark-yellow);
-            font-size: 1.1rem;
+            color: var(--light-yellow);
+            background: var(--dark-yellow);
+            font-size: 1.5rem;
             letter-spacing: 0.05em;
             text-transform: uppercase;
             text-decoration: none;
@@ -362,8 +364,6 @@
 
         .support-link a:hover {
             background: var(--dark-yellow);
-            color: var(--gray);
-            transform: scale(1.05);
         }
 
         strong {
@@ -401,6 +401,41 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        .seedandspark {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            margin: 1rem auto 0;
+            padding: 0.9rem 1.6rem;
+
+            font-family: "IM Fell English SC", serif;
+            font-size: 1.15rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+
+            color: var(--light-yellow);
+            background: rgba(16, 17, 17, 0.55);
+            border: 2px solid var(--dark-yellow);
+            border-radius: 6px;
+            text-decoration: none;
+
+            transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+        }
+
+        .seedandspark:hover {
+            background: rgba(139, 61, 22, 0.35);
+            border: 4px solid var(--accent);
+        }
+
+
+
+        .seedandspark:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 3px;
+        }
+
 
         /* ========== RESPONSIVE - MOBILE ========== */
         @media (max-width: 768px) {
@@ -561,11 +596,26 @@
             h2[style*="margin-top:5rem"] {
                 margin-top: 2.5rem !important;
             }
+
+            .seedandspark {
+                width: 100%;
+                max-width: 340px;
+                font-size: 1.05rem;
+                padding: 0.9rem 1rem;
+            }
+
         }
 
 
 
         @media (max-width: 480px) {
+            .seedandspark {
+                max-width: none;
+                font-size: 1rem;
+                padding: 0.85rem 0.95rem;
+                letter-spacing: 0.1em;
+            }
+
             nav {
                 padding: 0.85rem 1rem;
                 flex-direction: row-reverse;
@@ -760,7 +810,11 @@
         </div>
 
         <div class="content-box" style=" padding-bottom: 1rem; margin-top:4rem;">
-            <h2 style="font-size:1.6rem;">SEED&SPARK LINK Coming soon!</h2>
+            <div class="support-link">
+                <a class="seedandspark" href="https://seedandspark.com/fund/fiftyhounds#story" target="_blank"
+                    rel="noopener noreferrer">Seed&Spark Link →</a>
+            </div>
+
             <h2>Pledge</h2>
             <p style="font-size:1.6rem; text-align:center">Your donation will help bring this film to life, supporting
                 both our shoot and post-production efforts.
@@ -781,19 +835,19 @@
         </div>
         <h2 style="margin-top:4rem; font-size:2.2rem;">Attached Production Companies</h2>
         <div class="content-box">
-            <h2 style="font-size:2.2rem; color: var(--dark-yellow)">286 PRODUCTIONS</h2>
+            <h2 style="font-size:2.2rem; color: var(--accent)">286 PRODUCTIONS</h2>
             <p><em>286 PRODUCTIONS</em> is a female-run, artist-first production company championing bold, resonant
                 storytelling through female perspectives while cultivating creative community. Founded by
                 Writer/Director Carley Lovito, 286 has lead works including the world premiere of Clifford Odets' The
                 Nursery, The award winning film ‘Everything I Never Told You' and up and coming films including ‘Can't
                 You See I'm Trying', ‘Holy Water', ‘Peach Fuzz' and ‘It Girl'.</p>
-            <h2 style="font-size:2.2rem; color: var(--dark-yellow)">Rise studios</h2>
+            <h2 style="font-size:2.2rem; color: var(--accent)">Rise studios</h2>
             <p><em>RISE STUDIOS</em> is the production branch of RISE FLIX that handles the distribution company’s
                 production services from sourcing financing, to leveraging partnerships with rental houses for
                 equipment, to building cost-effective professional crews from their filmmaker network, to sourcing name
                 talent through their industry network of talent representatives and casting directors. They produce
                 narrative films, short proof-of-concepts, and feature films.</p>
-            <h2 style="font-size:2.2rem; color: var(--dark-yellow)">FROM THE HEART PRODUCTIONS </h2>
+            <h2 style="font-size:2.2rem; color: var(--accent)">FROM THE HEART PRODUCTIONS </h2>
             <p style="text-align: center; font-size:1rem;">We are incredibly grateful to partner with From the Heart
                 Productions for fiscal sponsorship, meaning all donations are tax deductible.</p>
             <p style="margin-bottom:0rem;"><em>FROM THE HEART PRODUCTIONS </em> is a non-profit dedicated to helping
