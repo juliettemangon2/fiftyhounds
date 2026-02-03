@@ -507,43 +507,44 @@
     }
 
     @media (max-width: 768px) {
-    body {
+      body {
         background-attachment: scroll !important;
         background-size: cover;
         background-position: center center;
-    }
-    
-    body::before {
+      }
+
+      body::before {
         position: absolute;
         height: 100%;
+      }
     }
-}
 
-/* iOS Safari specific fix */
-@supports (-webkit-touch-callout: none) {
-    body {
+    /* iOS Safari specific fix */
+    @supports (-webkit-touch-callout: none) {
+      body {
         background-attachment: scroll !important;
-    }
-    
-    body::before {
-        position: absolute;
-    }
-}
-/* Mobile background image fix */
-.mobile-bg {
-    display: none;
-}
+      }
 
-@media (max-width: 768px) {
-    body {
-        background: var(--gray) !important;
+      body::before {
+        position: absolute;
+      }
     }
-    
-    body::before {
-        background: rgba(0, 0, 0, 0.4);
-    }
-    
+
+    /* Mobile background image fix */
     .mobile-bg {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        background: var(--gray) !important;
+      }
+
+      body::before {
+        background: rgba(0, 0, 0, 0.4);
+      }
+
+      .mobile-bg {
         display: block;
         position: fixed;
         top: 0;
@@ -554,13 +555,13 @@
         background-size: cover;
         background-position: center center;
         z-index: -1;
+      }
     }
-}
   </style>
 </head>
 
 <body>
-      <div class="mobile-bg"></div>
+  <div class="mobile-bg"></div>
 
   <nav>
     <button class="menu-toggle" aria-label="Toggle menu">
@@ -610,7 +611,19 @@
           <p>Ovid, <i>Metamorphoses</i>, Book III, trans. Brookes More (1922)</p>
         </div>
       </div>
-     
+      <div class="myth-text">
+        <h3>Artemis</h3>
+        <p>Artemis was the Olympian goddess of hunting, the wilderness, and wild animals. She was also a goddess of
+          chastity, and the protectress of girls up until they were married.
+        </p>
+        <p>She was identified by the Romans as Diana.</p>
+        <p>Artemis was the daughter of Zeus and Leto, and twin sister to the god of music and the sun, Apollo. At an
+          early age, she asked her father to grant her eternal virginity and a life primarily separate from men. All of
+          her companions were virgins, and she was normally found surrounded by nymphs, out hunting or dancing.
+        </p>
+        <p>With the rise of feminism, Artemis has become an icon of feminine power and self-reliance.</p>
+      </div>
+
     </div>
   </section>
   <div class="support-link">
