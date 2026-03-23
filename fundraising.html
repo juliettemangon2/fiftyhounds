@@ -256,7 +256,6 @@
             padding: 0.8rem 1.5rem;
             font-family: "IM Fell English SC", serif;
             letter-spacing: 0.1em;
-            border-radius: 4px;
             cursor: pointer;
             transition: background 0.3s ease, transform 0.2s ease;
         }
@@ -283,7 +282,8 @@
             margin-bottom: 2rem;
         }
 
-        .support-link a {
+        .support-link a,
+        .support-link button {
             display: inline-block;
             font-family: "IM Fell English SC", serif;
             color: var(--light-yellow);
@@ -293,12 +293,20 @@
             text-transform: uppercase;
             text-decoration: none;
             border: 1.5px solid var(--dark-yellow);
+            border-radius: 2px;
             padding: 0.6rem 1.4rem;
+            cursor: pointer;
             transition: all 0.3s ease;
         }
 
-        .support-link a:hover {
-            background: var(--dark-yellow);
+        .support-link a:hover,
+        .support-link button:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .support-link form {
+            display: inline;
         }
 
         strong {
@@ -691,11 +699,18 @@
     <section>
         <h2>Fundraising</h2>
         <div class="content-box">
-            <p style=" text-align:center; margin-bottom: 0rem; font-size:1.6rem;"><em>Fifty Hounds</em> is an independent short film lead by a predominantly
+            <p style=" text-align:center; margin-bottom: 0rem; font-size:1.6rem;"><em>Fifty Hounds</em> is an
+                independent short film lead by a predominantly
                 female team. We are proud to be partnering with the below production companies that are focused on
                 uplifting and supporting independent, female filmmakers.</p>
 
 
+        </div>
+        <div class="support-link">
+            <form action="https://www.paypal.com/donate/?hosted_button_id=YH4W5CETB8LHS" method="post" target="_top">
+                <input type="hidden" name="hosted_button_id" value="YH4W5CETB8LHS" />
+                <button type="submit">Donate to Fifty Hounds</button>
+            </form>
         </div>
         <h2 style="margin-top:4rem; font-size:2.2rem;">Attached Production Companies</h2>
         <div class="content-box">
